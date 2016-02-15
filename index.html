@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="css/settings.css">
 </head>
 <body>
-<div class="tabbed-area adjacent">
-
+<div id="settingsWindow" class="tabbed-area adjacent">
     <div class="box-wrap">
         <div id="playerSettings">
             <label for="pName">Player Name</label><input type="text" id="pName" name="pName" onchange="updateSetting(this.name, this.value);"><br />
@@ -128,7 +127,9 @@
             <li><a href="#serverSettings">Server Settings</a></li>
             <li><a href="#advancedSettings">Advanced Settings</a></li>
         </ul>
+    <button id="closeButton" onclick="closeBrowser();">Close</button>
     </div>
 </div>
+
 </body>
 </html>

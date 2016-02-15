@@ -85,6 +85,18 @@ function arrayInArray(needle, haystack) {
     }
 }
 
+function closeBrowser() {
+	if(dewRconConnected) {
+		setTimeout(function() {
+			dewRcon.send('menu.show');
+			dewRcon.send('Game.SetMenuEnabled 0');
+		}, "1000");
+	} else{
+		window.close();
+	}
+}
+
+
 String.prototype.startsWith = function(needle)
 {
     return(this.indexOf(needle) == 0);
