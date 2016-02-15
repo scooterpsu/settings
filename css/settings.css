@@ -1,0 +1,27 @@
+@font-face{font-family: "Conduit ITC"; src: url("../fonts/Conduit-ITC.woff");}
+html{font-family: "Conduit ITC", sans-serif; color: white; font-size: 14pt;}
+input, select {float: right; right: 0; position: absolute; height: 17px; margin-right: 20px; width: 200px; margin-top: 2px;}
+label { float: left; }
+.tabs { list-style: none; }
+.tabs li { display: inline; }
+.tabs li a { color: white; float: left; display: block; padding: 4px 10px; margin-left: -1px; position: relative; left: 1px; background: #31415b; text-decoration: none; }
+.tabs li a:hover { background: #404f70; } 
+.group { margin-bottom: 0px;}
+.tabbed-area { margin: 0 0 120px 0; }
+.box-wrap { position: relative; min-height: 320px; }
+.tabbed-area div div { background: #31415b; padding: 20px; min-height: 320px; position: absolute; top: -1px; left: 0; width: 470px; }
+.tabbed-area div div, .tabs li a { border: 1px solid #05152f; }
+.adjacent { position: relative; margin-top: 40px; min-height: 320px; margin-bottom: 0px;}
+.adjacent div { border: 1px solid #05152f; background: #31415b; padding: 20px; min-height: 320px; position: absolute; top: -1px; left: 0; width: 470px; }
+.adjacent .tabs { position: absolute; bottom: 100%; left: 0; z-index: 2; }
+.adjacent .tabs li a { background: -moz-linear-gradient(top, #404f70, #eee); }
+#playerSettings:target,
+#serverSettings:target,
+#advancedSettings:target { z-index: 1; }
+#playerSettings:target ~ .tabs a[href='#playerSettings'],
+#serverSettings:target ~ .tabs a[href='#serverSettings'],
+#advancedSettings:target ~ .tabs a[href='#advancedSettings'] {
+    background: #31415b; border-bottom: 1px solid #31415b; 
+}
+#colorsPrimary::-webkit-color-swatch-wrapper, #colorsSecondary::-webkit-color-swatch-wrapper, #colorsVisor::-webkit-color-swatch-wrapper, #colorsLights::-webkit-color-swatch-wrapper, #colorsHolo::-webkit-color-swatch-wrapper{ padding: 0;}
+#colorsPrimary::-webkit-color-swatch, #colorsSecondary::-webkit-color-swatch, #colorsVisor::-webkit-color-swatch, #colorsLights::-webkit-color-swatch, #colorsHolo::-webkit-color-swatch{border: 0;}
