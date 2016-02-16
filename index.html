@@ -11,6 +11,37 @@
 <body>
 <div id="settingsWindow" class="tabbed-area adjacent">
     <div class="box-wrap">
+        <div id="serverSettings">
+            <label for="sName">Server Name</label><input type="text" id="sName" name="sName" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="sPass">Password</label><input type="text" id="sPass" name="sPass" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="sCountdown">Round Start Countdown</label><input type="text" id="sCountdown" name="sCountdown" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="sMaxPlayers">Maximum Players</label><input style="width:220px; right: 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" onchange="updateSetting(this.name, this.value);document.querySelector('#sMaxPlayersText').value = this.value;"><input type="text" style="width:25px" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);"><br />
+            <label for="sShouldAnnounce">Announce to Server Lists</label><input type="checkbox" id="sShouldAnnounce" name="sShouldAnnounce" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="sSprintEnabled">Sprint Enabled</label><input type="checkbox" id="sSprintEnabled" name="sSprintEnabled" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="sUnlimitedSprint">Unlimited Sprint</label><input type="checkbox" id="sUnlimitedSprint" name="sUnlimitedSprint" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="sDualWieldEnabled">Allow Dual Wielding</label><input type="checkbox" id="sDualWieldEnabled" name="sDualWieldEnabled" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="sAssassinationEnabled">Allow Assassination</label><input type="checkbox" id="sAssassinationEnabled" name="sAssassinationEnabled" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="voipServerEnable">Enable VoIP Server</label><input type="checkbox" id="voipServerEnable" name="voipServerEnable" onchange="updateSetting(this.name, this.value);"><br />
+        </div>
+            
+        <div id="advancedSettings">
+            <label for="cCenteredCrosshair">Centered Crosshair</label><input type="checkbox" id="cCenteredCrosshair" name="cCenteredCrosshair" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="cFOV">Screen FOV</label><input style="width:200px; right: 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" onchange="updateSetting(this.name, this.value);document.querySelector('#cFOVText').value = this.value;"><input type="text" style="width:45px" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);"><br />
+            <label for="cHideHUD">Hide HUD</label><input type="checkbox" id="cHideHUD" name="cHideHUD" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="cSpeed">Camera Speed</label><input type="text" id="cSpeed" name="cSpeed" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="inputRaw">Use Raw Input</label><input type="checkbox" id="inputRaw" name="inputRaw" onchange="updateSetting(this.name, this.value);"><br />
+            <center>VOIP</center>
+            <label for="voipPTT">Enable Push To Talk</label><input type="checkbox" id="voipPTT" name="voipPTT" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="voipVolMod">Volume Modifier</label><input type="text" id="voipVolMod" name="voipVolMod" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="voipAGC">Auto Gain Control</label><input type="checkbox" id="voipAGC" name="voipAGC" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="voipEchoCancel">Echo Cancellation</label><input type="checkbox" id="voipEchoCancel" name="voipEchoCancel" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="voipVAL">Voice Activation Level</label><input type="text" id="voipVAL" name="voipVAL" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="voipEnabled">VoIP Enabled</label><input type="checkbox" id="voipEnabled" name="voipEnabled" onchange="updateSetting(this.name, this.value);"><br />
+            <center>Graphics</center>
+            <label for="gfxSaturation">Saturation</label><input type="text" id="gfxSaturation" name="gfxSaturation" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="gfxBloom">Bloom</label><input type="text" id="gfxBloom"  name="gfxBloom" onchange="updateSetting(this.name, this.value);"><br />
+        </div>    
+
         <div id="playerSettings">
             <label for="pName">Player Name</label><input type="text" id="pName" name="pName" onchange="updateSetting(this.name, this.value);"><br />
             <label for="renderWeapon">Podium Weapon</label> 
@@ -90,44 +121,13 @@
             <label for="colorsLights">Lights</label><input class="jscolor jscolor-active" id="colorsLights" name="colorsLights" onchange="updateSetting(this.name, this.value);"><br />
             <label for="colorsHolo">Holo</label><input class="jscolor jscolor-active" id="colorsHolo" name="colorsHolo" onchange="updateSetting(this.name, this.value);"><br />
         </div>
-            
-        <div id="serverSettings">
-            <label for="sName">Server Name</label><input type="text" id="sName" name="sName" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="sPass">Password</label><input type="text" id="sPass" name="sPass" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="sCountdown">Round Start Countdown</label><input type="text" id="sCountdown" name="sCountdown" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="sMaxPlayers">Maximum Players</label><input style="width:170px; right: 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" onchange="updateSetting(this.name, this.value);document.querySelector('#sMaxPlayersText').value = this.value;"><input type="text" style="width:25px" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);"><br />
-            <label for="sShouldAnnounce">Announce to Server Lists</label><input type="checkbox" id="sShouldAnnounce" name="sShouldAnnounce" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="sSprintEnabled">Sprint Enabled</label><input type="checkbox" id="sSprintEnabled" name="sSprintEnabled" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="sUnlimitedSprint">Unlimited Sprint</label><input type="checkbox" id="sUnlimitedSprint" name="sUnlimitedSprint" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="sDualWieldEnabled">Allow Dual Wielding</label><input type="checkbox" id="sDualWieldEnabled" name="sDualWieldEnabled" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="sAssassinationEnabled">Allow Assassination</label><input type="checkbox" id="sAssassinationEnabled" name="sAssassinationEnabled" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="voipServerEnable">Enable VoIP Server</label><input type="checkbox" id="voipServerEnable" name="voipServerEnable" onchange="updateSetting(this.name, this.value);"><br />
-        </div>
-            
-        <div id="advancedSettings">
-            <label for="cCenteredCrosshair">Centered Crosshair</label><input type="checkbox" id="cCenteredCrosshair" name="cCenteredCrosshair" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="cFOV">Screen FOV</label><input style="width:150px; right: 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" onchange="updateSetting(this.name, this.value);document.querySelector('#cFOVText').value = this.value;"><input type="text" style="width:45px" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);"><br />
-            <label for="cHideHUD">Hide HUD</label><input type="checkbox" id="cHideHUD" name="cHideHUD" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="cSpeed">Camera Speed</label><input type="text" id="cSpeed" name="cSpeed" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="inputRaw">Use Raw Input</label><input type="checkbox" id="inputRaw" name="inputRaw" onchange="updateSetting(this.name, this.value);"><br />
-            <center>VOIP</center>
-            <label for="voipPTT">Enable Push To Talk</label><input type="checkbox" id="voipPTT" name="voipPTT" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="voipVolMod">Volume Modifier</label><input type="text" id="voipVolMod" name="voipVolMod" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="voipAGC">AGC</label><input type="checkbox" id="voipAGC" name="voipAGC" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="voipEchoCancel">Echo Cancellation</label><input type="checkbox" id="voipEchoCancel" name="voipEchoCancel" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="voipVAL">Voice Activation Level</label><input type="text" id="voipVAL" name="voipVAL" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="voipEnabled">VoIP Enabled</label><input type="checkbox" id="voipEnabled" name="voipEnabled" onchange="updateSetting(this.name, this.value);"><br />
-            <center>Graphics</center>
-            <label for="gfxSaturation">Saturation</label><input type="text" id="gfxSaturation" name="gfxSaturation" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="gfxBloom">Bloom</label><input type="text" id="gfxBloom"  name="gfxBloom" onchange="updateSetting(this.name, this.value);"><br />
-        </div>    
         
         <ul class="tabs group">
             <li><a href="#playerSettings">Player settings</a></li>
             <li><a href="#serverSettings">Server Settings</a></li>
             <li><a href="#advancedSettings">Advanced Settings</a></li>
         </ul>
-    <button id="closeButton" onclick="closeBrowser();">Close</button>
+        <button id="closeButton" onclick="closeBrowser();">CLOSE</button>
     </div>
 </div>
 

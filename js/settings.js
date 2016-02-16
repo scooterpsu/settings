@@ -14,9 +14,7 @@ $(document).ready(function() {
 
 function fixResolution() {
     zoomRatio = screen.width/1920;
-    if (zoomRatio > 1) {
-        $('body').css("zoom", zoomRatio);  
-    }
+    $('body').css("zoom", zoomRatio);  
 }
 
 function CheckPageFocus() {
