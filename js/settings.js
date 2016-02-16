@@ -7,7 +7,16 @@ $(document).ready(function() {
     $('#shoulders').append($("#helmet > option").clone());
     $('#arms').append($("#helmet > option").clone());
     $('#legs').append($("#helmet > option").clone());
-    $('.color').colorPicker();
+    $('.color').colorPicker({
+        opacity: false,    
+        renderCallback: function($elm, toggled) {
+            var colors = this.color.colors;
+            updateSetting($elm[0].name, '#'+colors.HEX);
+        }
+    });
+    $(':text,select,:checkbox').on('change', function(){
+        updateSetting(this.name, this.value);
+    });
 });
 
 function fixResolution() {
@@ -18,6 +27,11 @@ function fixResolution() {
 function connectionTrigger() {
     loadSettings(0);
 }
+
+function disconnectTrigger() {
+
+}
+
 
 function loadSettings(i) {
 	if (i != settingsToLoad.length) {
@@ -52,6 +66,7 @@ function updateSetting(thing, value){
     if (value.length < 1){
         value = "\"\"";
     }
+    //console.log(settingsToLoad[arrayInArray(thing, settingsToLoad)][1] + " " + value);
     dewRcon.send(settingsToLoad[arrayInArray(thing, settingsToLoad)][1] + " " + value, function(res){
         if (res != "Command/Variable not found") {
             dewRcon.send("writeconfig");
@@ -61,10 +76,7 @@ function updateSetting(thing, value){
 
 function closeBrowser() {
 	if(dewRconConnected) {
-		setTimeout(function() {
-			dewRcon.send('menu.show');
-			dewRcon.send('Game.SetMenuEnabled 0');
-		}, "500");
+        dewRcon.send('Game.SetMenuEnabled 0');
 	} else{
 		window.close();
 	}
