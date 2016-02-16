@@ -10,11 +10,13 @@ $(document).ready(function() {
     $('#shoulders').append($("#helmet > option").clone());
     $('#arms').append($("#helmet > option").clone());
     $('#legs').append($("#helmet > option").clone());
+    $('.color').colorPicker();
 });
 
 function fixResolution() {
     zoomRatio = screen.width/1920;
-    $('body').css("zoom", zoomRatio);  
+    $('#settingsWindow').css("zoom", zoomRatio);  
+  
 }
 
 function CheckPageFocus() {
@@ -36,7 +38,6 @@ function loadSettings(i) {
 	if (i != settingsToLoad.length) {
 		dewRcon.send(settingsToLoad[i][1], function(ret) {
             if(settingsToLoad[i][1].startsWith("Player.Colors")){
-                $("input[name='"+settingsToLoad[i][0]+"']").val(ret.substring(1, ret.length));  
                 $("input[name='"+settingsToLoad[i][0]+"']").css("background-color",ret);                   
             } else {
                 if ($("input[name='"+settingsToLoad[i][0]+"']").is(':checkbox')){
@@ -57,9 +58,6 @@ function loadSettings(i) {
 }
 
 function updateSetting(thing, value){
-    if(thing.startsWith("colors")){
-        value = "#" + value;
-    }
     if ($("input[name='"+thing+"']").is(':checkbox')){
         if ($("input[name='"+thing+"']").is(':checked')){
             value = "1";

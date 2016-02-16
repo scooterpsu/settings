@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <title>Settings</title>
     <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/jscolor.min.js"></script>
+    <script src="js/jqColorPicker.min.js"></script>
     <script src="js/dewRcon.js"></script>
     <script src="js/settings.js"></script>
     <link rel="stylesheet" href="css/settings.css">
@@ -115,11 +115,11 @@
             <label for="arms">Arms</label><select id="arms" name="armorArms" onchange="updateSetting(this.name, this.value);"></select><br />
             <label for="legs">Legs</label><select id="legs" name="armorLegs" onchange="updateSetting(this.name, this.value);"></select><br />
             <center>Colors</center>
-            <label for="colorsPrimary">Primary</label><input class="jscolor jscolor-active" id="colorsPrimary" name="colorsPrimary" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="colorsSecondary">Secondary</label><input class="jscolor jscolor-active" id="colorsSecondary" name="colorsSecondary" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="colorsVisor">Visor</label><input class="jscolor jscolor-active" id="colorsVisor" name="colorsVisor" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="colorsLights">Lights</label><input class="jscolor jscolor-active" id="colorsLights" name="colorsLights" onchange="updateSetting(this.name, this.value);"><br />
-            <label for="colorsHolo">Holo</label><input class="jscolor jscolor-active" id="colorsHolo" name="colorsHolo" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="colorsPrimary">Primary</label><input class="color no-alpha" id="colorsPrimary" value="#FFFFFF" name="colorsPrimary" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="colorsSecondary">Secondary</label><input class="color no-alpha" id="colorsSecondary" value="#FFFFFF" name="colorsSecondary" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="colorsVisor">Visor</label><input class="color no-alpha" id="colorsVisor" value="#FFFFFF" name="colorsVisor" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="colorsLights">Lights</label><input class="color no-alpha" id="colorsLights" value="#FFFFFF" name="colorsLights" onchange="updateSetting(this.name, this.value);"><br />
+            <label for="colorsHolo">Holo</label><input class="color no-alpha" id="colorsHolo" value="#FFFFFF" name="colorsHolo" onchange="updateSetting(this.name, this.value);"><br />
         </div>
         
         <ul class="tabs group">
