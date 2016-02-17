@@ -14,7 +14,7 @@ $(document).ready(function() {
             updateSetting($elm[0].name, '#'+colors.HEX);
         }
     });
-    $('input:not(input[type=color])').on('change', function(){
+    $('input:not(input[type=color]), select').on('change', function(){
         updateSetting(this.name, this.value);
     });
 });
