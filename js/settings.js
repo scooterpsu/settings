@@ -82,10 +82,6 @@ function closeBrowser() {
 	}
 }
 
-Mousetrap.bind('f11', function() {
-    closeBrowser();
-});
-
 function arrayInArray(needle, haystack) {
     for(i=0; i<haystack.length; i++) {
         if (haystack[i].indexOf(needle) > -1){
