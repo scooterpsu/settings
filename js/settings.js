@@ -14,7 +14,7 @@ $(document).ready(function() {
             updateSetting($elm[0].name, '#'+colors.HEX);
         }
     });
-    $(':text,select,:checkbox').on('change', function(){
+    $('input:not(input[type=color])').on('change', function(){
         updateSetting(this.name, this.value);
     });
 });
@@ -81,6 +81,10 @@ function closeBrowser() {
 		window.close();
 	}
 }
+
+Mousetrap.bind('f11', function() {
+    closeBrowser();
+});
 
 function arrayInArray(needle, haystack) {
     for(i=0; i<haystack.length; i++) {
