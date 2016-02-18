@@ -22,8 +22,8 @@
             <label for="sName">Server Name</label><input type="text" id="sName" name="sName"><br />
             <label for="sPass">Password</label><input type="text" id="sPass" name="sPass"><br />
             <label for="sCountdown">Round Start Countdown</label><input type="text" id="sCountdown" name="sCountdown"><br />
-            <label for="sMaxPlayers">Maximum Players</label><input style="width:220px; right: 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" onchange="document.querySelector('#sMaxPlayersText').value = this.value;">
-            <input type="text" style="width:25px" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);"><br />
+            <label for="sMaxPlayers">Maximum Players</label><input style="width:</label>220px; right:</label> 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" onchange="document.querySelector('#sMaxPlayersText').value = this.value;">
+            <input type="text" style="width:</label>25px" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);"><br />
             <label for="sShouldAnnounce">Announce to Server Lists</label><input type="checkbox" id="sShouldAnnounce" name="sShouldAnnounce"><br />
             <label for="sSprintEnabled">Sprint Enabled</label><input type="checkbox" id="sSprintEnabled" name="sSprintEnabled"><br />
             <label for="sUnlimitedSprint">Unlimited Sprint</label><input type="checkbox" id="sUnlimitedSprint" name="sUnlimitedSprint"><br />
@@ -34,8 +34,8 @@
             
         <div id="advancedSettings">
             <label for="cCenteredCrosshair">Centered Crosshair</label><input type="checkbox" id="cCenteredCrosshair" name="cCenteredCrosshair"><br />
-            <label for="cFOV">Screen FOV</label><input style="width:200px; right: 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" onchange="document.querySelector('#cFOVText').value = this.value;">
-            <input type="text" style="width:45px" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);"><br />
+            <label for="cFOV">Screen FOV</label><input style="width:</label>200px; right:</label> 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" onchange="document.querySelector('#cFOVText').value = this.value;">
+            <input type="text" style="width:</label>45px" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);"><br />
             <label for="cHideHUD">Hide HUD</label><input type="checkbox" id="cHideHUD" name="cHideHUD"><br />
             <label for="cSpeed">Camera Speed</label><input type="text" id="cSpeed" name="cSpeed"><br />
             <label for="inputRaw">Use Raw Input</label><input type="checkbox" id="inputRaw" name="inputRaw"><br />
@@ -137,6 +137,43 @@
             <li><a href="#advancedSettings">Advanced Settings</a></li>
         </ul>
     </div>
+</div>
+
+<div id="controllerSettings">
+    <label for="Sprint">Sprint</label><select id="Sprint">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="X">X</option>
+        <option value="Y">Y</option>
+        <option value="RB">RB</option>
+        <option value="LB">LB</option>
+        <option value="LT">LT</option>
+        <option value="RT">RT</option>
+        <option value="Start">Start</option>
+        <option value="Select">Back</option>
+        <option value="LS">LS</option>
+        <option value="RS">RS</option>
+        <option value="Left">Left</option>
+        <option value="Right">Right</option>
+        <option value="Up">Up</option>
+        <option value="Down">Down</option>
+    </select><br />
+    <label for="A">A:</label><div id="A"></div><br />
+    <label for="B">B:</label><div id="B"></div><br />
+    <label for="X">X:</label><div id="X"></div><br />
+    <label for="Y">Y:</label><div id="Y"></div><br />
+    <label for="RB">RB:</label><div id="RB"></div><br />
+    <label for="LB">LB:</label><div id="LB"></div><br />
+    <label for="LT">LT:</label><div id="LT"></div><br />
+    <label for="RT">RT:</label><div id="RT"></div><br />
+    <label for="Start">Start:</label><div id="Start"></div><br />
+    <label for="Back">Select:</label><div id="Back"></div><br />
+    <label for="LS">LS:</label><div id="LS"></div><br />
+    <label for="RS">RS:</label><div id="RS"></div><br />
+    <label for="Left">Left:</label><div id="Left"></div><br />
+    <label for="Right">Right:</label><div id="Right"></div><br />
+    <label for="Up">Up:</label><div id="Up"></div><br />
+    <label for="Down">Down:</label><div id="Down"></div><br />
 </div>
 
 </body>

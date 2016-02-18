@@ -25,4 +25,6 @@ label { float: left; }
 #colorsPrimary::-webkit-color-swatch, #colorsSecondary::-webkit-color-swatch, #colorsVisor::-webkit-color-swatch, #colorsLights::-webkit-color-swatch, #colorsHolo::-webkit-color-swatch{ border: 0; }
 #windowHeader{ top: -40px; left: -1px; width: 551px; height: 45px; background-color: black; color: white; padding-top: 3px;}
 #closeButton{ font-weight: bold; position: absolute; top: 6px; right: 6px; z-index: 10; width: 26px; height: 24px; color: white; border: 1px solid white; background-color: black; opacity: 1; font-size: 13pt;}
-#settingsWindow{ position: absolute; right: 33.5%; top: 40%;}
+#settingsWindow{ display: none; position: absolute; right: 33.5%; top: 40%;}
+#controllerSettings { color: black;}
+#controllerSettings div { width: 100px; }

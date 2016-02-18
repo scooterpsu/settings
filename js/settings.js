@@ -14,9 +14,14 @@ $(document).ready(function() {
             updateSetting($elm[0].name, '#'+colors.HEX);
         }
     });
-    $('input:not(input[type=color]), select').on('change', function(){
+    $('#settingsWindow input:not(input[type=color]), #settingsWindow select').on('change', function(){
+        console.log(this.name, this.value);
         updateSetting(this.name, this.value);
     });
+    $('#controllerSettings select').on('change', function(){
+        console.log(this.id, this.value);
+        updateBinding(this.id, this.value);
+    });    
 });
 
 function fixResolution() {
@@ -93,3 +98,10 @@ function arrayInArray(needle, haystack) {
 String.prototype.startsWith = function(needle){
     return(this.indexOf(needle) == 0);
 };
+
+function updateBinding(thing, bind){
+    if ($("#" + bind).val().length > 0){
+        thing == ", " + thing;
+    }
+    $("#" + bind).append(thing);
+}
