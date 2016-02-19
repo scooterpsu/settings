@@ -11,6 +11,7 @@
     <script>
         $(function() {
             $( "#settingsWindow" ).draggable();
+            $( "#controllerSettings" ).draggable();
         });
     </script>
 </head>
@@ -19,42 +20,46 @@
     <div class="box-wrap">
         <div id="windowHeader">Eldewrito Settings<button id="closeButton" onclick="closeBrowser();">X</button></div>
         <div id="serverSettings">
-            <label for="sName">Server Name</label><input type="text" id="sName" name="sName"><br />
-            <label for="sPass">Password</label><input type="text" id="sPass" name="sPass"><br />
-            <label for="sCountdown">Round Start Countdown</label><input type="text" id="sCountdown" name="sCountdown"><br />
-            <label for="sMaxPlayers">Maximum Players</label><input style="width:</label>220px; right:</label> 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" onchange="document.querySelector('#sMaxPlayersText').value = this.value;">
-            <input type="text" style="width:</label>25px" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);"><br />
-            <label for="sShouldAnnounce">Announce to Server Lists</label><input type="checkbox" id="sShouldAnnounce" name="sShouldAnnounce"><br />
-            <label for="sSprintEnabled">Sprint Enabled</label><input type="checkbox" id="sSprintEnabled" name="sSprintEnabled"><br />
-            <label for="sUnlimitedSprint">Unlimited Sprint</label><input type="checkbox" id="sUnlimitedSprint" name="sUnlimitedSprint"><br />
-            <label for="sDualWieldEnabled">Allow Dual Wielding</label><input type="checkbox" id="sDualWieldEnabled" name="sDualWieldEnabled"><br />
-            <label for="sAssassinationEnabled">Allow Assassination</label><input type="checkbox" id="sAssassinationEnabled" name="sAssassinationEnabled"><br />
-            <label for="voipServerEnable">Enable VoIP Server</label><input type="checkbox" id="voipServerEnable" name="voipServerEnable"><br />
+            <label for="sName">Server Name</label><input class="setting" type="text" id="sName" name="sName"><br />
+            <label for="sPass">Password</label><input class="setting" type="text" id="sPass" name="sPass"><br />
+            <label for="sCountdown">Round Start Countdown</label><input class="setting" type="text" id="sCountdown" name="sCountdown"><br />
+            <label for="sMaxPlayers">Maximum Players</label>
+            <input type="text" style="width: 25px; float: right; margin-left: 3px;" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);">
+            <input style="float: right; width: 220px; right: 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" onchange="document.querySelector('#sMaxPlayersText').value = this.value;">
+            <br />
+            <label for="sShouldAnnounce">Announce to Server Lists</label><input class="setting" type="checkbox" id="sShouldAnnounce" name="sShouldAnnounce"><br />
+            <label for="sSprintEnabled">Sprint Enabled</label><input class="setting" type="checkbox" id="sSprintEnabled" name="sSprintEnabled"><br />
+            <label for="sUnlimitedSprint">Unlimited Sprint</label><input class="setting" type="checkbox" id="sUnlimitedSprint" name="sUnlimitedSprint"><br />
+            <label for="sDualWieldEnabled">Allow Dual Wielding</label><input class="setting" type="checkbox" id="sDualWieldEnabled" name="sDualWieldEnabled"><br />
+            <label for="sAssassinationEnabled">Allow Assassination</label><input class="setting" type="checkbox" id="sAssassinationEnabled" name="sAssassinationEnabled"><br />
+            <label for="voipServerEnable">Enable VoIP Server</label><input class="setting" type="checkbox" id="voipServerEnable" name="voipServerEnable"><br />
         </div>
             
         <div id="advancedSettings">
-            <label for="cCenteredCrosshair">Centered Crosshair</label><input type="checkbox" id="cCenteredCrosshair" name="cCenteredCrosshair"><br />
-            <label for="cFOV">Screen FOV</label><input style="width:</label>200px; right:</label> 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" onchange="document.querySelector('#cFOVText').value = this.value;">
-            <input type="text" style="width:</label>45px" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);"><br />
-            <label for="cHideHUD">Hide HUD</label><input type="checkbox" id="cHideHUD" name="cHideHUD"><br />
-            <label for="cSpeed">Camera Speed</label><input type="text" id="cSpeed" name="cSpeed"><br />
-            <label for="inputRaw">Use Raw Input</label><input type="checkbox" id="inputRaw" name="inputRaw"><br />
+            <label for="cCenteredCrosshair">Centered Crosshair</label><input class="setting" type="checkbox" id="cCenteredCrosshair" name="cCenteredCrosshair"><br />
+            <label for="cFOV">Screen FOV</label>
+            <input type="text" style="width: 45px; float: right;  margin-left: 3px;" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);">
+            <input style="float: right; width: 200px; right: 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" onchange="document.querySelector('#cFOVText').value = this.value;">
+            <br />
+            <label for="cHideHUD">Hide HUD</label><input class="setting" type="checkbox" id="cHideHUD" name="cHideHUD"><br />
+            <label for="cSpeed">Camera Speed</label><input class="setting" type="text" id="cSpeed" name="cSpeed"><br />
+            <label for="inputRaw">Use Raw Input</label><input class="setting" type="checkbox" id="inputRaw" name="inputRaw"><br />
             <center>VOIP</center>
-            <label for="voipPTT">Enable Push To Talk</label><input type="checkbox" id="voipPTT" name="voipPTT"><br />
-            <label for="voipVolMod">Volume Modifier</label><input type="text" id="voipVolMod" name="voipVolMod"><br />
-            <label for="voipAGC">Auto Gain Control</label><input type="checkbox" id="voipAGC" name="voipAGC"><br />
-            <label for="voipEchoCancel">Echo Cancellation</label><input type="checkbox" id="voipEchoCancel" name="voipEchoCancel"><br />
-            <label for="voipVAL">Voice Activation Level</label><input type="text" id="voipVAL" name="voipVAL"><br />
-            <label for="voipEnabled">VoIP Enabled</label><input type="checkbox" id="voipEnabled" name="voipEnabled"><br />
+            <label for="voipPTT">Enable Push To Talk</label><input class="setting" type="checkbox" id="voipPTT" name="voipPTT"><br />
+            <label for="voipVolMod">Volume Modifier</label><input class="setting" type="text" id="voipVolMod" name="voipVolMod"><br />
+            <label for="voipAGC">Auto Gain Control</label><input class="setting" type="checkbox" id="voipAGC" name="voipAGC"><br />
+            <label for="voipEchoCancel">Echo Cancellation</label><input class="setting" type="checkbox" id="voipEchoCancel" name="voipEchoCancel"><br />
+            <label for="voipVAL">Voice Activation Level</label><input class="setting" type="text" id="voipVAL" name="voipVAL"><br />
+            <label for="voipEnabled">VoIP Enabled</label><input class="setting" type="checkbox" id="voipEnabled" name="voipEnabled"><br />
             <center>Graphics</center>
-            <label for="gfxSaturation">Saturation</label><input type="text" id="gfxSaturation" name="gfxSaturation"><br />
-            <label for="gfxBloom">Bloom</label><input type="text" id="gfxBloom"  name="gfxBloom"><br />
+            <label for="gfxSaturation">Saturation</label><input class="setting" type="text" id="gfxSaturation" name="gfxSaturation"><br />
+            <label for="gfxBloom">Bloom</label><input class="setting" type="text" id="gfxBloom"  name="gfxBloom"><br />
         </div>    
 
         <div id="playerSettings">
-            <label for="pName">Player Name</label><input type="text" id="pName" name="pName"><br />
+            <label for="pName">Player Name</label><input class="setting" type="text" id="pName" name="pName"><br />
             <label for="renderWeapon">Podium Weapon</label> 
-                <select id="renderWeapon" name="renderWeapon">
+                <select id="renderWeapon" name="renderWeapon" class="setting">
                     <option value="assault_rifle">Assault Rifle</option>
                     <option value="ar_variant_2">DMG Assault Rifle</option>
                     <option value="ar_variant_3">ROF Assault Rifle</option>
@@ -91,7 +96,7 @@
                 </select><br />
                 <center>Armor</center>
             <label for="helmet">Helmet</label>
-                <select id="helmet" name="armorHelmet">
+                <select id="helmet" name="armorHelmet" class="setting">
                     <option value="air_assault">Air Assault</option>
                     <option value="ballista">Ballista</option>
                     <option value="chameleon">Chameleon</option>
@@ -119,16 +124,16 @@
                     <option value="strider">Strider</option>
                     <option value="widow_maker">Widow Maker</option>
                 </select><br />
-            <label for="chest">Chest</label><select id="chest" name="armorChest"></select><br />
-            <label for="shoulders">Shoulders</label><select id="shoulders" name="armorShoulders"></select><br />
-            <label for="arms">Arms</label><select id="arms" name="armorArms"></select><br />
-            <label for="legs">Legs</label><select id="legs" name="armorLegs"></select><br />
+            <label for="chest">Chest</label><select id="chest" class="setting" name="armorChest"></select><br />
+            <label for="shoulders">Shoulders</label><select id="shoulders" class="setting" name="armorShoulders"></select><br />
+            <label for="arms">Arms</label><select id="arms" class="setting" name="armorArms"></select><br />
+            <label for="legs">Legs</label><select id="legs" class="setting" name="armorLegs"></select><br />
             <center>Colors</center>
-            <label for="colorsPrimary">Primary</label><input class="color no-alpha" id="colorsPrimary" value="#FFFFFF" name="colorsPrimary"><br />
-            <label for="colorsSecondary">Secondary</label><input class="color no-alpha" id="colorsSecondary" value="#FFFFFF" name="colorsSecondary"><br />
-            <label for="colorsVisor">Visor</label><input class="color no-alpha" id="colorsVisor" value="#FFFFFF" name="colorsVisor"><br />
-            <label for="colorsLights">Lights</label><input class="color no-alpha" id="colorsLights" value="#FFFFFF" name="colorsLights"><br />
-            <label for="colorsHolo">Holo</label><input class="color no-alpha" id="colorsHolo" value="#FFFFFF" name="colorsHolo"><br />
+      <label for="colorsPrimary">Primary</label><input class="setting color no-alpha" id="colorsPrimary" value="#FFFFFF" name="colorsPrimary"><br />
+      <label for="colorsSecondary">Secondary</label><input class="setting color no-alpha" id="colorsSecondary" value="#FFFFFF" name="colorsSecondary"><br />
+      <label for="colorsVisor">Visor</label><input class="setting color no-alpha" id="colorsVisor" value="#FFFFFF" name="colorsVisor"><br />
+      <label for="colorsLights">Lights</label><input class="setting color no-alpha" id="colorsLights" value="#FFFFFF" name="colorsLights"><br />
+      <label for="colorsHolo">Holo</label><input class="setting color no-alpha" id="colorsHolo" value="#FFFFFF" name="colorsHolo"><br />
         </div>
         
         <ul class="tabs group">
@@ -140,40 +145,65 @@
 </div>
 
 <div id="controllerSettings">
-    <label for="Sprint">Sprint</label><select id="Sprint">
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="X">X</option>
-        <option value="Y">Y</option>
-        <option value="RB">RB</option>
-        <option value="LB">LB</option>
-        <option value="LT">LT</option>
-        <option value="RT">RT</option>
-        <option value="Start">Start</option>
-        <option value="Select">Back</option>
-        <option value="LS">LS</option>
-        <option value="RS">RS</option>
-        <option value="Left">Left</option>
-        <option value="Right">Right</option>
-        <option value="Up">Up</option>
-        <option value="Down">Down</option>
-    </select><br />
-    <label for="A">A:</label><div id="A"></div><br />
-    <label for="B">B:</label><div id="B"></div><br />
-    <label for="X">X:</label><div id="X"></div><br />
-    <label for="Y">Y:</label><div id="Y"></div><br />
-    <label for="RB">RB:</label><div id="RB"></div><br />
-    <label for="LB">LB:</label><div id="LB"></div><br />
-    <label for="LT">LT:</label><div id="LT"></div><br />
-    <label for="RT">RT:</label><div id="RT"></div><br />
-    <label for="Start">Start:</label><div id="Start"></div><br />
-    <label for="Back">Select:</label><div id="Back"></div><br />
-    <label for="LS">LS:</label><div id="LS"></div><br />
-    <label for="RS">RS:</label><div id="RS"></div><br />
-    <label for="Left">Left:</label><div id="Left"></div><br />
-    <label for="Right">Right:</label><div id="Right"></div><br />
-    <label for="Up">Up:</label><div id="Up"></div><br />
-    <label for="Down">Down:</label><div id="Down"></div><br />
+<div id="controllerHeader">Controller Settings<button id="closeButton" onclick="closeBrowser();">X</button></div>
+<div id="presets"><label for="presetMenu">Presets:</label><select id="presetMenu" onchange="applyPreset(this.value);">
+    <option value="LS,A,X,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,Right,,,LT,A,X,RS,LT,B,Start,Back,Y,,">Halo Online Default</option>
+    <option value="X,A,LS,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,Right,,,LT,A,X,RS,LT,B,Start,Back,Y,,">Halo 3 Default</option>
+    <option value="B,A,LS,X,LB,RT,LT,X,LB,RS,Y,LT,RB,LB,,,LT,A,X,RT,LT,B,Start,Back,Y,,">Halo 5 Boxer</option>
+</select><br /></div>
+    <div id="controls">
+        <label for="Jump">Jump</label><select id="Jump">
+            <option value=""></option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="X">X</option>
+            <option value="Y">Y</option>
+            <option value="RB">RB</option>
+            <option value="LB">LB</option>
+            <option value="LT">LT</option>
+            <option value="RT">RT</option>
+            <option value="Start">Start</option>
+            <option value="Back">Back</option>
+            <option value="LS">LS</option>
+            <option value="RS">RS</option>
+            <option value="Left">Left</option>
+            <option value="Right">Right</option>
+            <option value="Up">Up</option>
+            <option value="Down">Down</option>
+        </select><br />
+        <label for="Melee">Melee</label><select id="Melee"></select><br />        
+        <label for="Reload">Reload</label><select id="Reload"></select><br />
+        <label for="Use">Use</label><select id="Use"></select><br />
+        <label for="SwitchWeapons">SwitchWeapons</label><select id="SwitchWeapons"></select><br />
+        <label for="Crouch">Crouch</label><select id="Crouch"></select><br />
+        <label for="Zoom">Zoom</label><select id="Zoom"></select><br />
+        <label for="Fire">Fire</label><select id="Fire"></select><br />
+        <label for="Grenade">Grenade</label><select id="Grenade"></select><br />
+        <label for="SwitchGrenades">SwitchGrenades</label><select id="SwitchGrenades"></select><br />
+        <label for="Sprint">Sprint</label><select id="Sprint"></select><br />
+        <label for="DualWield">DualWield</label><select id="DualWield"></select><br />
+        <label for="FireLeft">FireLeft</label><select id="FireLeft"></select><br />
+        <label for="ReloadLeft">ReloadLeft</label><select id="ReloadLeft"></select><br />
+    </div>
+    <div id="controllerGraphic">
+        <img id="controllerPic" src="images/controller.png">
+        <div id="A"></div>
+        <div id="B"></div>
+        <div id="X"></div>
+        <div id="Y"></div>
+        <div id="RB"></div>
+        <div id="LB"></div>
+        <div id="LT"></div>
+        <div id="RT"></div>
+        <div id="Start"></div>
+        <div id="Back"></div>
+        <div id="LS"></div>
+        <div id="RS"></div>
+        <div id="Left"></div>
+        <div id="Right"></div>
+        <div id="Up"></div>
+        <div id="Down"></div>
+    </div>
 </div>
 
 </body>
