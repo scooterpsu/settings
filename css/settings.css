@@ -31,7 +31,7 @@ label { float: left; }
 #controls { margin-left: 10px; border: 1px solid white; position: relative; float: left; padding: 10px; width: 200px; }
 #controls select { float: right;}
 #controllerGraphic { position: relative; float:right; right: 250px; top: 50px; }
-#controllerGraphic div { position: absolute; width: 350px; height: 32px; line-height: 16px;}
+#controllerGraphic div { position: absolute; width: 350px; height: 32px; line-height: 16px; z-index: -1;}
 #controllerPic { position: relative; top: 5px; left; -50px; }
 #A { left: 445px; top: 171px;}
 #B { left: 437px; top: 140px;}
