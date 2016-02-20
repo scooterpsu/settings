@@ -25,9 +25,9 @@ label { float: left; }
 #settingsWindow{ position: absolute; right: 33.5%; top: 40%;  font-size: 18pt;}
 .setting { float: right; right: 0; position: absolute; height: 22px; margin-right: 20px; width: 250px; margin-top: 2px; font-size: 13pt; !important}
 #controllerSettings { display: none; position: relative; color: black; font-size: 15pt; font-weight: bold; background-color: #14234a; color: white; width: 1180px; height: 360px; opacity: 0.8; padding: 10px; padding-top: 60px;}
-#controllerHeader{ position: absolute; top: 0px; left: 0px; width: 1180px; height: 31px; background-color: black; color: white; padding-left: 20px; padding-top: 8px;}
+#controllerHeader{ position: absolute; top: 0px; left: 0px; width: 1180px; height: 36px; background-color: black; color: white; padding-left: 20px; padding-top: 3px; font-size: 18pt;}
 #presets { float: right; margin-right: 250px; margin-top: -3px; }
-#presetMenu { margin-top: 3px; margin-left: 10px; width: 380px;}
+#presetMenu { margin-top: 5px; margin-left: 10px; width: 380px;}
 #controls { margin-left: 10px; border: 1px solid white; position: relative; float: left; padding: 10px; width: 200px; }
 #controls select { float: right;}
 #controllerGraphic { position: relative; float:right; right: 250px; top: 50px; }
