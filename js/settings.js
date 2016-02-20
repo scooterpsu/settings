@@ -157,3 +157,29 @@ function updateBinding(thing, bind){
         });
     }
 }
+
+var controllerShown = false;
+function showController(){
+    if (!controllerShown){
+        $("#controllerSettings").css("display", "block");
+        controllerShown = true;
+    } else {
+        $("#controllerSettings").css("display", "none");
+        controllerShown = false;
+    }
+}
+
+var extendedShown = false;
+function showExtended(){
+    if (!extendedShown){
+        $("#extendedControls").css("display", "block");
+        $("#expandCollapse").css("bottom", "-230px");
+        $("#expandCollapse").html("Less");        
+        extendedShown = true;
+    } else {
+        $("#extendedControls").css("display", "none");
+        $("#expandCollapse").css("bottom", "-10px");
+        $("#expandCollapse").html("More");  
+        extendedShown = false;
+    }
+}
