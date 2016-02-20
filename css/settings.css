@@ -21,14 +21,14 @@ label { float: left; }
 #serverSettings:target ~ .tabs a[href='#serverSettings'],
 #advancedSettings:target ~ .tabs a[href='#advancedSettings'] { border-top: 1px solid #14234a;}
 #windowHeader{ top: -40px; left: -1px; width: 551px; height: 45px; background-color: black; color: white; padding-top: 3px;}
-#closeButton{ font-weight: bold; position: absolute; top: 6px; right: 6px; z-index: 10; width: 26px; height: 24px; color: white; border: 1px solid white; background-color: black; font-size: 13pt;    border-radius: 3px;}
-#closeButton:hover{background-color: #404f70;}
+#closeButton{ font-weight: bold; position: absolute; top: 7px; right: 6px; z-index: 10; width: 25px; height: 24px; color: white; border: 1px solid white; background-color: black; font-size: 12pt !important;  border-radius: 3px;}
+#closeButton:hover{background-color: #14234a;}
 #settingsWindow{ position: absolute; right: 33.5%; top: 40%;  font-size: 18pt;}
 .setting { float: right; right: 0; position: absolute; height: 22px; margin-right: 20px; width: 250px; margin-top: 2px; font-size: 13pt; !important}
-#controllerSettings { display: none; position: relative; color: black; font-size: 15pt; font-weight: bold; background-color: #14234a; color: white; width: 1180px; height: 360px; opacity: 0.8; padding: 10px; padding-top: 60px;}
+#controllerSettings { display: none; position: relative; color: black; font-size: 15pt; font-weight: bold; background-color: #14234a; color: white; width: 1180px; height: 360px; opacity: 0.8; padding: 10px; padding-top: 60px; border: 1px solid black;}
 #controllerHeader{ position: absolute; top: 0px; left: 0px; width: 1180px; height: 36px; background-color: black; color: white; padding-left: 20px; padding-top: 3px; font-size: 18pt;}
 #presets { float: right; margin-right: 250px; margin-top: -3px; }
-#presetMenu { margin-top: 5px; margin-left: 10px; width: 380px;}
+#presetMenu { margin-top: 3px; margin-left: 10px; width: 380px;}
 #controls { margin-left: 10px; border: 1px solid white; position: relative; float: left; padding: 10px; width: 200px; }
 #controls select { float: right;}
 #controllerGraphic { position: relative; float:right; right: 250px; top: 50px; }
@@ -50,7 +50,7 @@ label { float: left; }
 #Right { left: 180px; top: 263px;}
 #Up { right: 444px; top: 167px; text-align: right;}
 #Down { right: 438px; top: 237px; text-align: right;}
-#extendedControls { display: none; position: absolute; top: 430px; width: 1200px; left: 0px; height: 220px; background-color: #14234a;}
+#extendedControls { display: none; position: absolute; top: 430px; width: 1200px; left: -1px; height: 220px; background-color: #14234a; border: 1px solid black; border-top: 0;}
 #extendedControls label {float: left;}
 #extendedControls select {float: right;}
 #expandCollapse { position: absolute; bottom: -10px; left: 550px; border: 1px solid black; background-color: #14234a; color: white; width:50px; height; 30px;}
