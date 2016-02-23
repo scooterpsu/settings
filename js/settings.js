@@ -131,20 +131,21 @@ String.prototype.startsWith = function(needle){
 function applyBindString(bindString){
     var bindArray = new Array(bindString.split(','));
     for (i = 0; i < bindArray[0].length; i++) { 
-        if (bindArray[0][i].length > 0){
-            $("select[id='"+binds[i]+"']").val(bindArray[0][i]);
-            updateBinding(binds[i], bindArray[0][i]);
-        }
+        $("select[id='"+binds[i]+"']").val(bindArray[0][i]);
+        updateBinding(binds[i], bindArray[0][i]);
     }
     updateBindLabels();
 }
 
 function updateBinding(action, bind){
 	if(dewRconConnected) {
+        if (bind){
+            bind = "\"" + bind + "\"";
+        }
         if (bind == "Back"){
             bind = "Select";
         }
-        dewRcon.send("Input.ControllerAction \"" + action + "\" \"" + bind + "\"", function(res){
+        dewRcon.send("Input.ControllerAction \"" + action + "\" " + bind, function(res){
             if (res != "Command/Variable not found") {
                 dewRcon.send("writeconfig");
             }
