@@ -22,6 +22,7 @@ $(document).ready(function() {
     });
     $('#controllerSettings select[id!=\"presetMenu\"]').on('change', function(){
         updateBinding(this.id, this.value);
+        updateBindLabels();
     });    
     $('#Melee').append($("#Jump > option").clone());
     $('#Reload').append($("#Jump > option").clone());
@@ -127,8 +128,7 @@ String.prototype.startsWith = function(needle){
 };
 
 
-function applyPreset(bindString){
-    $('#controllerGraphic').children('div').empty();
+function applyBindString(bindString){
     var bindArray = new Array(bindString.split(','));
     for (i = 0; i < bindArray[0].length; i++) { 
         if (bindArray[0][i].length > 0){
@@ -136,25 +136,34 @@ function applyPreset(bindString){
             updateBinding(binds[i], bindArray[0][i]);
         }
     }
+    updateBindLabels();
 }
 
-function updateBinding(thing, bind){
-    if(document.getElementById(bind)){
-        var thingThings = thing;
-        if(document.getElementById(bind).innerHTML.length > 0){
-            thingThings = ", " + thing;
-        }
-        $("#" + bind).append(thingThings);
-    }
+function updateBinding(action, bind){
 	if(dewRconConnected) {
         if (bind == "Back"){
             bind = "Select";
         }
-        dewRcon.send("Input.ControllerAction \"" + thing + "\" \"" + bind + "\"", function(res){
+        dewRcon.send("Input.ControllerAction \"" + action + "\" \"" + bind + "\"", function(res){
             if (res != "Command/Variable not found") {
                 dewRcon.send("writeconfig");
             }
         });
+    }
+}
+
+function updateBindLabels(){
+    $('#controllerGraphic').children('div').empty();
+    for (i = 0; i < binds.length; i++) { 
+        var bind = document.getElementById(binds[i]).value;
+        var thing = binds[i];
+        if(document.getElementById(bind)){
+            var thingThings = thing;
+            if(document.getElementById(bind).innerHTML.length > 0){
+                thingThings = ", " + thing;
+            }
+            $("#" + bind).append(thingThings);
+        }
     }
 }
 
