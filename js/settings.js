@@ -156,13 +156,13 @@ function updateBindLabels(){
     $('#controllerGraphic').children('div').empty();
     for (i = 0; i < binds.length; i++) { 
         var bind = document.getElementById(binds[i]).value;
-        var thing = binds[i];
+        var action = binds[i];
         if(document.getElementById(bind)){
-            var thingThings = thing;
+            var actionString = action;
             if(document.getElementById(bind).innerHTML.length > 0){
-                thingThings = ", " + thing;
+                actionString = ", " + action;
             }
-            $("#" + bind).append(thingThings);
+            $("#" + bind).append(actionString);
         }
     }
 }
