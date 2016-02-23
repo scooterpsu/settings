@@ -1,28 +1,57 @@
 @font-face{ font-family: "Conduit ITC"; src: url("../fonts/Conduit-ITC.woff"); }
-html{ font-family: "Conduit ITC", sans-serif; color: white; font-size: 18pt; }
-input, select { float: right; right: 0; position: absolute; height: 22px; margin-right: 20px; width: 250px; margin-top: 2px; font-size: 13pt; }
+html{ font-family: "Conduit ITC", sans-serif; color: white; }
 label { float: left; }
 .tabs { list-style: none; }
 .tabs li { display: inline; }
-.tabs li a { color: white; float: left; display: block; padding: 4px 10px; margin-left: -1px; position: relative; left: 1px; background: #31415b; text-decoration: none; }
+.tabs li a { color: white; float: left; display: block; padding: 4px 10px; margin-left: -1px; position: relative; left: 1px; background: #14234a; text-decoration: none; }
 .tabs li a:hover { background: #404f70; } 
 .group { margin-bottom: 0px; }
 .tabbed-area { margin: 0 0 140px 0; }
 .box-wrap { position: relative; min-height: 430px; }
-.tabbed-area div div { background: #31415b; padding: 20px; min-height: 430px; position: absolute; top: -2px; left: 0; width: 550px; }
+.tabbed-area div div { background: #14234a; padding: 20px; min-height: 430px; position: absolute; top: -2px; left: 0; width: 550px; }
 .tabbed-area div div, .tabs li a { border: 1px solid black; }
 .adjacent { position: relative; margin-top: 45px; margin-bottom: 40px; min-height: 430px; margin-bottom: 0px; opacity: 0.8; }
-.adjacent div { border: 1px solid black; padding: 20px; min-height: 430px; position: absolute; top: -1px; left: 0; width: 550px; }
-.adjacent .tabs { position: absolute; bottom: -37px; left: 0; z-index: 2; }
+.adjacent div { border: 1px solid black; padding: 20px; min-height: 430px; position: absolute; top: -2px; left: 0; width: 550px; }
+.adjacent .tabs { position: absolute; bottom: -38px; left: -41px; z-index: 2; }
 .adjacent .tabs li a { background: -moz-linear-gradient(top, #404f70, #eee); padding-bottom: 5px; }
 #playerSettings:target,
 #serverSettings:target,
 #advancedSettings:target { z-index: 1; }
 #playerSettings:target ~ .tabs a[href='#playerSettings'],
 #serverSettings:target ~ .tabs a[href='#serverSettings'],
-#advancedSettings:target ~ .tabs a[href='#advancedSettings'] { border-top: 1px solid #31415b;}
-#colorsPrimary::-webkit-color-swatch-wrapper, #colorsSecondary::-webkit-color-swatch-wrapper, #colorsVisor::-webkit-color-swatch-wrapper, #colorsLights::-webkit-color-swatch-wrapper, #colorsHolo::-webkit-color-swatch-wrapper{ padding: 0;}
-#colorsPrimary::-webkit-color-swatch, #colorsSecondary::-webkit-color-swatch, #colorsVisor::-webkit-color-swatch, #colorsLights::-webkit-color-swatch, #colorsHolo::-webkit-color-swatch{ border: 0; }
+#advancedSettings:target ~ .tabs a[href='#advancedSettings'] { border-top: 1px solid #14234a;}
 #windowHeader{ top: -40px; left: -1px; width: 551px; height: 45px; background-color: black; color: white; padding-top: 3px;}
-#closeButton{ font-weight: bold; position: absolute; top: 6px; right: 6px; z-index: 10; width: 26px; height: 24px; color: white; border: 1px solid white; background-color: black; opacity: 1; font-size: 13pt;}
-#settingsWindow{ position: absolute; right: 33.5%; top: 40%;}
+#closeButton{ font-weight: bold; position: absolute; top: 7px; right: 6px; z-index: 10; width: 25px; height: 24px; color: white; border: 1px solid white; background-color: black; font-size: 12pt !important;  border-radius: 3px;}
+#closeButton:hover{background-color: #14234a;}
+#settingsWindow{ position: absolute; right: 33.5%; top: 40%;  font-size: 18pt;}
+.setting { float: right; right: 0; position: absolute; height: 22px; margin-right: 20px; width: 250px; margin-top: 2px; font-size: 13pt; !important}
+#controllerSettings { display: none; position: relative; color: black; font-size: 15pt; font-weight: bold; background-color: #14234a; color: white; width: 1180px; height: 360px; opacity: 0.8; padding: 10px; padding-top: 60px; border: 1px solid black;}
+#controllerHeader{ position: absolute; top: 0px; left: 0px; width: 1180px; height: 36px; background-color: black; color: white; padding-left: 20px; padding-top: 3px; font-size: 18pt;}
+#presets { float: right; margin-right: 250px; margin-top: -3px; }
+#presetMenu { margin-top: 3px; margin-left: 10px; width: 380px;}
+#controls { margin-left: 10px; border: 1px solid white; position: relative; float: left; padding: 10px; width: 200px; }
+#controls select { float: right;}
+#controllerGraphic { position: relative; float:right; right: 250px; top: 50px; }
+#controllerGraphic div { position: absolute; width: 250px; height: 32px; line-height: 16px; z-index: -1;}
+#controllerPic { position: relative; top: 5px; left; -50px; }
+#A { left: 443px; top: 177px;}
+#B { left: 435px; top: 144px;}
+#X { left: 420px; top: 78px;}
+#Y { left: 428px; top: 111px;}
+#RS { left: 441px; top: 216px;}
+#RB { left: 395px; top: 22px;}
+#RT { left: 324px; top: -30px;}
+#LT { right: 321px; top: -30px; text-align: right}
+#LB { right: 390px; top: 22px; text-align: right;}
+#Start { right: 411px; top: 78px; text-align: right; height: 20px !important;}
+#Back { right: 434px; top: 101px; text-align: right; height: 20px !important;}
+#LS { right: 443px; top: 127px; text-align: right;}
+#Left { right: 444px; top: 202px; text-align: right;}
+#Right { left: 180px; top: 263px;}
+#Up { right: 444px; top: 167px; text-align: right;}
+#Down { right: 438px; top: 237px; text-align: right;}
+#extendedControls { display: none; position: absolute; top: 430px; width: 1200px; left: -1px; height: 220px; background-color: #14234a; border: 1px solid black; border-top: 0;}
+#extendedControls label {float: left;}
+#extendedControls select {float: right;}
+#expandCollapse { position: absolute; bottom: -10px; left: 550px; border: 1px solid black; background-color: #14234a; color: white; width:50px; height; 30px;}
+#vehicle, #other {margin-left: 20px; width: 300px; border: 1px solid white; padding: 5px; float: left;}
