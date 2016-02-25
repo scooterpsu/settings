@@ -58,72 +58,9 @@
 
         <div id="playerSettings">
             <label for="pName">Player Name</label><input class="setting" type="text" id="pName" name="pName"><br />
-            <label for="renderWeapon">Podium Weapon</label> 
-                <select id="renderWeapon" name="renderWeapon" class="setting">
-                    <option value="assault_rifle">Assault Rifle</option>
-                    <option value="ar_variant_2">DMG Assault Rifle</option>
-                    <option value="ar_variant_3">ROF Assault Rifle</option>
-                    <option value="ar_variant_5">ACC Assault Rifle</option>
-                    <option value="ar_variant_6">PWR Assault Rifle</option>
-                    <option value="battle_rifle">Battle Rifle</option>
-                    <option value="br_variant_1">ROF Battle Rifle</option>
-                    <option value="br_variant_2">ACC Battle Rifle</option>
-                    <option value="br_variant_3">MAG Battle Rifle</option>
-                    <option value="br_variant_4">DMG Battle Rifle</option>
-                    <option value="br_variant_5">RNG Battle Rifle</option>
-                    <option value="br_variant_6">PWR Battle Rifle</option>
-                    <option value="covenant_carbine">Covenant Carbine</option>
-                    <option value="covenant_carbine_variant_1">MAG Covenant Carbine</option>
-                    <option value="covenant_carbine_variant_2">DMG Covenant Carbine</option>
-                    <option value="covenant_carbine_variant_3">ACC Covenant Carbine</option>
-                    <option value="covenant_carbine_variant_4">ROF Covenant Carbine</option>
-                    <option value="covenant_carbine_variant_5">RNG Covenant Carbine</option>
-                    <option value="covenant_carbine_variant_6">PWR Covenant Carbine</option>
-                    <option value="dmr">DMR</option>
-                    <option value="dmr_variant_1">MAG DMR</option>
-                    <option value="dmr_variant_2">ACC DMR</option>
-                    <option value="dmr_variant_3">ROF DMR</option>
-                    <option value="dmr_variant_4">DMG DMR</option>
-                    <option value="dmr_variant_5" >RNG DMR</option>
-                    <option value="dmr_variant_6" >PWR DMR</option>
-                    <option value="plasma_rifle">Plasma Rifle</option>
-                    <option value="plasma_rifle_variant_6">PWR Plasma Rifle</option>
-                    <option value="smg">SMG</option>
-                    <option value="smg_variant_1">ROF SMG</option>
-                    <option value="smg_variant_2">ACC SMG</option>
-                    <option value="smg_variant_4">DMG SMG</option>
-                    <option value="smg_variant_6">PWR SMG</option>
-                </select><br />
-                <center>Armor</center>
-            <label for="helmet">Helmet</label>
-                <select id="helmet" name="armorHelmet" class="setting">
-                    <option value="air_assault">Air Assault</option>
-                    <option value="ballista">Ballista</option>
-                    <option value="chameleon">Chameleon</option>
-                    <option value="cyclops">Cyclops</option>
-                    <option value="demo">Demo</option>
-                    <option value="dutch">Dutch</option>
-                    <option value="gladiator">Gladiator</option>
-                    <option value="gungnir">Gungnir</option>
-                    <option value="halberd">Halberd</option>
-                    <option value="hammerhead">Hammerhead</option>
-                    <option value="hoplite">Hoplite</option>
-                    <option value="juggernaut">Juggernaut</option>
-                    <option value="mac">Mac</option>
-                    <option value="mercenary">Mercenary</option>
-                    <option value="nihard">Nihard</option>
-                    <option value="omni">Omni</option>
-                    <option value="oracle">Oracle</option>
-                    <option value="orbital">Orbital</option>    
-                    <option value="renegade">Renegade</option>             
-                    <option value="scanner">Scanner</option>
-                    <option value="shark">Shark</option>            
-                    <option value="silverback">Silverback</option>
-                    <option value="spectrum">Spectrum</option>
-                    <option value="stealth">Stealth</option>
-                    <option value="strider">Strider</option>
-                    <option value="widow_maker">Widow Maker</option>
-                </select><br />
+            <label for="renderWeapon">Podium Weapon</label><select id="renderWeapon" name="renderWeapon" class="setting"></select><br />
+            <center>Armor</center>
+            <label for="helmet">Helmet</label><select id="helmet" name="armorHelmet" class="setting"></select><br />
             <label for="chest">Chest</label><select id="chest" class="setting" name="armorChest"></select><br />
             <label for="shoulders">Shoulders</label><select id="shoulders" class="setting" name="armorShoulders"></select><br />
             <label for="arms">Arms</label><select id="arms" class="setting" name="armorArms"></select><br />
@@ -148,41 +85,9 @@
 <div id="controllerSettings">
 <div id="controllerHeader">Controller Settings<button id="closeButton" onclick="showController();">X</button></div>
 <div id="presets"><label for="presetMenu">Presets:</label><select id="presetMenu" onchange="applyBindString(this.value);">
-    <option value="LS,A,X,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,Right,,,LT,A,X,RT,LT,B,Start,Back,Y,,">Halo Online Default</option>
-    <option value="X,A,LS,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,LB,,,LT,A,LS,RT,LT,B,Start,Back,Y,,">Halo 3 Default</option>
-    <option value="X,A,LS,RB,LB,LT,RT,RB,LB,RS,Y,B,RT,LB,,,RT,A,LS,LT,RT,B,Start,Back,Y,,">Halo 3 Southpaw</option>
-    <option value="X,A,LS,RB,LB,RT,LT,RB,LB,RS,Y,LT,B,LB,,,LT,A,LS,RT,LT,B,Start,Back,Y,,">Halo 3 Boxer</option>
-    <option value="X,A,LS,RB,LB,RT,LT,RB,LB,B,Y,RS,LT,LB,,,LT,A,LS,RT,LT,B,Start,Back,Y,,">Halo 3 Green Thumb</option>
-    <option value="X,LB,LS,B,A,RT,LT,B,A,RS,Y,RB,LT,A,,,LT,A,LS,RT,LT,B,Start,Back,Y,,">Halo 3 Bumper Jumper</option>
-    <option value="Up,A,LS,B,X,RT,LT,B,X,RS,Y,RB,LT,A,,,LT,A,LS,RT,LT,B,Start,Back,Y,,LB">Halo 3 Walkie Talkie</option>
-    <option value="LB,A,LS,X,LB,RT,LT,X,LB,RS,Y,RB,LT,B,,,LT,A,LS,RT,LT,B,Start,Back,Y,Down,Up">Halo Reach Default</option>
-    <option value="LB,A,LS,X,LB,RT,LT,X,LB,RB,Y,RS,LT,B,,,LT,A,LS,RT,LT,B,Start,Back,Y,Down,Up">Halo Reach Green Thumb</option>
-    <option value="LB,A,LS,X,LB,RT,LT,X,LB,RS,Y,LT,RB,B,,,LT,A,LS,RT,LT,B,Start,Back,Y,Down,Up">Halo Reach Boxer</option>
-    <option value="X,LB,LS,B,LB,RT,LT,B,LB,RS,Y,RB,LT,A,,,LT,LB,LS,RT,LT,RB,Start,Back,Y,Down,Up">Halo Reach Bumper Jumper</option>
-    <option value="LB,A,LS,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,X,,,LT,A,LS,RT,LT,B,Start,Back,Y,Down,Up">Halo Reach Recon</option>
-    <option value="RB,A,LS,X,RB,LT,RT,X,RB,RS,Y,LB,RT,B,,,RT,A,LS,LT,RT,B,Start,Back,Y,Down,Up">Halo Reach Southpaw</option>
-    <option value="B,A,LS,X,LB,RT,LT,X,LB,RS,Y,LT,RB,LB,,,LT,A,LS,RT,LT,B,Start,Back,Y,,">Halo 5 Boxer</option>
 </select><br /></div>
     <div id="controls">
-        <label for="Jump">Jump</label><select id="Jump">
-            <option value=""></option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="X">X</option>
-            <option value="Y">Y</option>
-            <option value="RB">RB</option>
-            <option value="LB">LB</option>
-            <option value="LT">LT</option>
-            <option value="RT">RT</option>
-            <option value="Start">Start</option>
-            <option value="Back">Back</option>
-            <option value="LS">LS</option>
-            <option value="RS">RS</option>
-            <option value="Left">Left</option>
-            <option value="Right">Right</option>
-            <option value="Up">Up</option>
-            <option value="Down">Down</option>
-        </select><br />
+        <label for="Jump">Jump</label><select id="Jump"></select><br />
         <label for="Melee">Melee</label><select id="Melee"></select><br />        
         <label for="Reload">Reload</label><select id="Reload"></select><br />
         <label for="Use">Use</label><select id="Use"></select><br />

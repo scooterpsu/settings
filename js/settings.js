@@ -4,12 +4,33 @@ var loadedSettings = false;
 
 var binds = ["Sprint", "Jump", "Crouch", "Use", "DualWield", "Fire", "FireLeft", "Reload", "ReloadLeft", "Zoom", "SwitchWeapons", "Melee", "Grenade", "SwitchGrenades", "VehicleAccelerate", "VehicleBrake", "VehicleBoost", "VehicleRaise", "VehicleDive", "VehicleFire", "VehicleAltFire", "BansheeBomb", "Menu", "Scoreboard", "ForgeDelete", "Chat", "TeamChat"];
 
+var buttons = ["","A","B","X","Y","RB","LB","LT","RT","Start","Back","LS","RS","Left","Right","Up","Down"];
+
+var controllerPresets = [
+    ["Halo Online Default","LS,A,X,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,Right,,,LT,A,X,RT,LT,B,Start,Back,Y,,"],
+    ["Halo 3 Default","X,A,LS,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,LB,,,LT,A,LS,RT,LT,B,Start,Back,Y,,"],
+    ["Halo 3 Southpaw","X,A,LS,RB,LB,LT,RT,RB,LB,RS,Y,B,RT,LB,,,RT,A,LS,LT,RT,B,Start,Back,Y,,"],
+    ["Halo 3 Boxer","X,A,LS,RB,LB,RT,LT,RB,LB,RS,Y,LT,B,LB,,,LT,A,LS,RT,LT,B,Start,Back,Y,,"],
+    ["Halo 3 Green Thumb","X,A,LS,RB,LB,RT,LT,RB,LB,B,Y,RS,LT,LB,,,LT,A,LS,RT,LT,B,Start,Back,Y,,"],
+    ["Halo 3 Bumper Jumper","X,LB,LS,B,A,RT,LT,B,A,RS,Y,RB,LT,A,,,LT,A,LS,RT,LT,B,Start,Back,Y,,"],
+    ["Halo 3 Walkie Talkie","Up,A,LS,B,X,RT,LT,B,X,RS,Y,RB,LT,A,,,LT,A,LS,RT,LT,B,Start,Back,Y,,LB"],
+    ["Halo Reach Default","LB,A,LS,X,LB,RT,LT,X,LB,RS,Y,RB,LT,B,,,LT,A,LS,RT,LT,B,Start,Back,Y,Down,Up"],
+    ["Halo Reach Green Thumb","LB,A,LS,X,LB,RT,LT,X,LB,RB,Y,RS,LT,B,,,LT,A,LS,RT,LT,B,Start,Back,Y,Down,Up"],
+    ["Halo Reach Boxer","LB,A,LS,X,LB,RT,LT,X,LB,RS,Y,LT,RB,B,,,LT,A,LS,RT,LT,B,Start,Back,Y,Down,Up"],
+    ["Halo Reach Bumper Jumper","X,LB,LS,B,LB,RT,LT,B,LB,RS,Y,RB,LT,A,,,LT,LB,LS,RT,LT,RB,Start,Back,Y,Down,Up"],
+    ["Halo Reach Recon","LB,A,LS,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,X,,,LT,A,LS,RT,LT,B,Start,Back,Y,Down,Up"],
+    ["Halo Reach Southpaw","RB,A,LS,X,RB,LT,RT,X,RB,RS,Y,LB,RT,B,,,RT,A,LS,LT,RT,B,Start,Back,Y,Down,Up"],
+    ["Halo 5 Boxer","B,A,LS,X,LB,RT,LT,X,LB,RS,Y,LT,RB,Right,,,LT,A,LS,RT,LT,B,Start,Back,Y,,"]
+];
+
+
 $(document).ready(function() {
     fixResolution();
-    $('#chest').append($("#helmet > option").clone());
-    $('#shoulders').append($("#helmet > option").clone());
-    $('#arms').append($("#helmet > option").clone());
-    $('#legs').append($("#helmet > option").clone());
+    setArmorList("helmet");
+    setArmorList("chest");
+    setArmorList("shoulders");
+    setArmorList("arms");
+    setArmorList("legs");
     $('.color').colorPicker({
         opacity: false,    
         renderCallback: function($elm, toggled) {
@@ -24,32 +45,9 @@ $(document).ready(function() {
         updateBinding(this.id, this.value);
         updateBindLabels();
     });    
-    $('#Melee').append($("#Jump > option").clone());
-    $('#Reload').append($("#Jump > option").clone());
-    $('#Use').append($("#Jump > option").clone());
-    $('#SwitchWeapons').append($("#Jump > option").clone());
-    $('#Crouch').append($("#Jump > option").clone());
-    $('#Zoom').append($("#Jump > option").clone());
-    $('#Fire').append($("#Jump > option").clone());
-    $('#Grenade').append($("#Jump > option").clone());
-    $('#SwitchGrenades').append($("#Jump > option").clone()); 
-    $('#Sprint').append($("#Jump > option").clone());
-    $('#Menu').append($("#Jump > option").clone());
-    $('#Scoreboard').append($("#Jump > option").clone());
-    $('#DualWield').append($("#Jump > option").clone());
-    $('#FireLeft').append($("#Jump > option").clone());
-    $('#ReloadLeft').append($("#Jump > option").clone());
-    $('#VehicleAccelerate').append($("#Jump > option").clone());
-    $('#VehicleBrake').append($("#Jump > option").clone());
-    $('#VehicleBoost').append($("#Jump > option").clone());
-    $('#VehicleRaise').append($("#Jump > option").clone());
-    $('#VehicleDive').append($("#Jump > option").clone());
-    $('#VehicleFire').append($("#Jump > option").clone()); 
-    $('#VehicleAltFire').append($("#Jump > option").clone());
-    $('#BansheeBomb').append($("#Jump > option").clone());
-    $('#ForgeDelete').append($("#Jump > option").clone());
-    $('#Chat').append($("#Jump > option").clone());
-    $('#TeamChat').append($("#Jump > option").clone());
+    setButtonLists();
+    setPresetOptions();
+    setRenderWeapons();
 });
 
 function fixResolution() {
@@ -193,3 +191,49 @@ function showExtended(){
         extendedShown = false;
     }
 }
+
+function setPresetOptions(){
+    var sel = document.getElementById('presetMenu');
+    for(var i = 0; i < controllerPresets.length; i++) {
+        var opt = document.createElement('option');
+        opt.innerHTML = controllerPresets[i][0];
+        opt.value = controllerPresets[i][1];
+        sel.appendChild(opt);
+    }
+}
+
+function setButtonLists(){
+    for(var i = 0; i < binds.length; i++) {
+        var sel = document.getElementById(binds[i]);
+        for(var x = 0; x < buttons.length; x++) {
+            var opt = document.createElement('option');
+            opt.innerHTML = buttons[x];
+            opt.value = buttons[x];
+            sel.appendChild(opt);
+        }
+    }
+}
+
+function setRenderWeapons(){
+    var sel = document.getElementById('renderWeapon');
+    for(var i = 0; i < renderWeapons.length; i++) {
+        var opt = document.createElement('option');
+        opt.innerHTML = renderWeapons[i][1];
+        opt.value = renderWeapons[i][0];
+        sel.appendChild(opt);
+    }
+}
+
+function setArmorList(id){
+    var sel = document.getElementById(id);
+    for(var i = 0; i < armorList.length; i++) {
+        var opt = document.createElement('option');
+        opt.innerHTML = armorList[i][1];
+        opt.value = armorList[i][0];
+        sel.appendChild(opt);
+    }
+}
+
+var renderWeapons = [["assault_rifle","Assault Rifle"],["ar_variant_2","DMG Assault Rifle"],["ar_variant_3","ROF Assault Rifle"],["ar_variant_5","ACC Assault Rifle"],["ar_variant_6","PWR Assault Rifle"],["battle_rifle","Battle Rifle"],["br_variant_1","ROF Battle Rifle"],["br_variant_2","ACC Battle Rifle"],["br_variant_3","MAG Battle Rifle"],["br_variant_4","DMG Battle Rifle"],["br_variant_5","RNG Battle Rifle"],["br_variant_6","PWR Battle Rifle"],["covenant_carbine","Covenant Carbine"],["covenant_carbine_variant_1","MAG Covenant Carbine"],["covenant_carbine_variant_2","DMG Covenant Carbine"],["covenant_carbine_variant_3","ACC Covenant Carbine"],["covenant_carbine_variant_4","ROF Covenant Carbine"],["covenant_carbine_variant_5","RNG Covenant Carbine"],["covenant_carbine_variant_6","PWR Covenant Carbine"],["dmr","DMR"],["dmr_variant_1","MAG DMR"],["dmr_variant_2","ACC DMR"],["dmr_variant_3","ROF DMR"],["dmr_variant_4","DMG DMR"],["dmr_variant_5","RNG DMR"],["dmr_variant_6","PWR DMR"],["plasma_rifle","Plasma Rifle"],["plasma_rifle_variant_6","PWR Plasma Rifle"],["smg","SMG"],["smg_variant_1","ROF SMG"],["smg_variant_2","ACC SMG"],["smg_variant_4","DMG SMG"],["smg_variant_6","PWR SMG"]];
+
+var armorList = [["air_assault","Air Assault"],["ballista","Ballista"],["chameleon","Chameleon"],["cyclops","Cyclops"],["demo","Demo"],["dutch","Dutch"],["gladiator","Gladiator"],["gungnir","Gungnir"],["halberd","Halberd"],["hammerhead","Hammerhead"],["hoplite","Hoplite"],["juggernaut","Juggernaut"],["mac","Mac"],["mercenary","Mercenary"],["nihard","Nihard"],["omni","Omni"],["oracle","Oracle"],["orbital","Orbital"],["renegade","Renegade"],["scanner","Scanner"],["shark","Shark"],["silverback","Silverback"],["spectrum","Spectrum"],["stealth","Stealth"],["strider","Strider"],["widow_maker","Widow Maker"]];
