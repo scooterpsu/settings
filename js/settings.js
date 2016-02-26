@@ -94,6 +94,9 @@ $(document).ready(function() {
     $('#settingsWindow input:not(input[type=color]), #settingsWindow select').on('change', function(){
         updateSetting(this.name, this.value);
     });
+    $('#settingsWindow input[type=range]').on('input', function(){
+        updateSetting(this.name, this.value);
+    });
     $('#controllerSettings select[id!=\"presetMenu\"]').on('change', function(){
         updateBinding(this.id, this.value);
         updateBindLabels();
@@ -232,7 +235,7 @@ var extendedShown = false;
 function showExtended(){
     if (!extendedShown){
         $("#extendedControls").css("display", "block");
-        $("#expandCollapse").css("bottom", "-230px");
+        $("#expandCollapse").css("bottom", "-240px");
         $("#expandCollapse").html("Less");        
         extendedShown = true;
     } else {

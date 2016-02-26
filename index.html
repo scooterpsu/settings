@@ -25,7 +25,7 @@
             <label for="sCountdown">Round Start Countdown</label><input class="setting" type="text" id="sCountdown" name="sCountdown"><br />
             <label for="sMaxPlayers">Maximum Players</label>
             <input type="text" style="width: 25px; float: right; margin-left: 3px;" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);">
-            <input style="float: right; width: 220px; right: 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" onchange="document.querySelector('#sMaxPlayersText').value = this.value;">
+            <input style="float: right; width: 220px; right: 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" oninput="document.querySelector('#sMaxPlayersText').value = this.value;">
             <br />
             <label for="sShouldAnnounce">Announce to Server Lists</label><input class="setting" type="checkbox" id="sShouldAnnounce" name="sShouldAnnounce"><br />
             <label for="sSprintEnabled">Sprint Enabled</label><input class="setting" type="checkbox" id="sSprintEnabled" name="sSprintEnabled"><br />
@@ -39,7 +39,7 @@
             <label for="cCenteredCrosshair">Centered Crosshair</label><input class="setting" type="checkbox" id="cCenteredCrosshair" name="cCenteredCrosshair"><br />
             <label for="cFOV">Screen FOV</label>
             <input type="text" style="width: 45px; float: right;  margin-left: 3px;" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);">
-            <input style="float: right; width: 200px; right: 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" onchange="document.querySelector('#cFOVText').value = this.value;">
+            <input style="float: right; width: 200px; right: 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" oninput="document.querySelector('#cFOVText').value = this.value;">
             <br />
             <label for="cHideHUD">Hide HUD</label><input class="setting" type="checkbox" id="cHideHUD" name="cHideHUD"><br />
             <label for="cSpeed">Camera Speed</label><input class="setting" type="text" id="cSpeed" name="cSpeed"><br />
@@ -137,6 +137,24 @@
         <label for="TeamChat">TeamChat</label><select id="TeamChat"></select><br />
         <label for="Menu">Menu</label><select id="Menu"></select><br />
         <label for="Scoreboard">Scoreboard</label><select id="Scoreboard"></select><br />
+        </div>
+        <div id="advanced">
+        <label for="lookSensitivity">Look Sensitivity</label>
+        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="lookSensitivityText" name="lookSensitivity" onchange="updateSetting('lookSensitivity', this.value);" disabled>
+        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="lookSensitivity" name="lookSensitivity" oninput="document.querySelector('#lookSensitivityText').value = this.value;" disabled>
+        <br />
+        <label for="movementSensitivity">Movement Sensitivity</label>
+        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="movementSensitivityText" name="movementSensitivity" onchange="updateSetting('lookSensitivity', this.value);" disabled>
+        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="movementSensitivity" name="movementSensitivity" oninput="document.querySelector('#movementSensitivityText').value = this.value;" disabled>
+        <br />
+        <label for="stickLayout">Stick Layout</label><select id="stickLayout" disabled>
+        <option value="">Default</option>
+        <option value="">Southpaw</option>
+        <option value="">Legacy</option>
+        <option value="">Legacy Southpaw</option>
+        </select><br />
+        <label for="lookInversion">Look Inversion</label><input type="checkbox" id="lookInversion" disabled><br />
+        <label for="toggleCrouch">Toggle Crouch</label><input type="checkbox" id="toggleCrouch" disabled><br />
         </div>
     </div>
     <button id="expandCollapse" onClick="showExtended();">More</button>
