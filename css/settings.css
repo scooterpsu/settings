@@ -1,28 +1,26 @@
-@font-face{ font-family: "Conduit ITC"; src: url("../fonts/Conduit-ITC.woff"); }
-html{ font-family: "Conduit ITC", sans-serif; color: white; }
+@font-face { font-family: "Conduit ITC"; src: url("../fonts/Conduit-ITC.woff"); }
+html { font-family: "Conduit ITC", sans-serif; color: white; }
 label { float: left; }
 .tabs { list-style: none; }
 .tabs li { display: inline; }
-.tabs li a { color: white; float: left; display: block; padding: 4px 10px; margin-left: -1px; position: relative; left: 1px; background: #14234a; text-decoration: none; }
-.tabs li a:hover { background: #404f70; } 
-.group { margin-bottom: 0px; }
-.tabbed-area { margin: 0 0 140px 0; }
+.tabs li a { color: white; float: left; display: block; padding: 6px 12px 4px; margin-left: -1px; position: relative; background: #14234a; text-decoration: none; }
+.tabs li a:hover { background: #9a5a37; } 
+.group { margin-bottom: 0px; padding: 0; bottom: -35px; }
 .box-wrap { position: relative; min-height: 430px; }
-.tabbed-area div div { background: #14234a; padding: 20px; min-height: 430px; position: absolute; top: -2px; left: 0; width: 550px; }
+.tabbed-area div div { background: #14234a; padding: 20px; min-height: 430px; position: absolute; left: 0; width: 550px; }
 .tabbed-area div div, .tabs li a { border: 1px solid black; }
 .adjacent { position: relative; margin-top: 45px; margin-bottom: 40px; min-height: 430px; margin-bottom: 0px; opacity: 0.8; }
 .adjacent div { border: 1px solid black; padding: 20px; min-height: 430px; position: absolute; top: -2px; left: 0; width: 550px; }
-.adjacent .tabs { position: absolute; bottom: -38px; left: -41px; z-index: 2; }
-.adjacent .tabs li a { background: -moz-linear-gradient(top, #404f70, #eee); padding-bottom: 5px; }
+.adjacent .tabs { position: absolute; left: 0px; }
 #playerSettings:target,
 #serverSettings:target,
-#advancedSettings:target { z-index: 1; }
+#advancedSettings:target { z-index: 2; }
 #playerSettings:target ~ .tabs a[href='#playerSettings'],
 #serverSettings:target ~ .tabs a[href='#serverSettings'],
-#advancedSettings:target ~ .tabs a[href='#advancedSettings'] { border-top: 1px solid #14234a;}
+#advancedSettings:target ~ .tabs a[href='#advancedSettings'] { border-top: 1px solid #14234a; background-color: #14234a !important; z-index: 3 !important;}
 #windowHeader{ top: -40px; left: -1px; width: 551px; height: 45px; background-color: black; color: white; padding-top: 3px;}
-#closeButton{ font-weight: bold; position: absolute; top: 7px; right: 6px; z-index: 10; width: 25px; height: 24px; color: white; border: 1px solid white; background-color: black; font-size: 12pt !important;  border-radius: 3px;}
-#closeButton:hover{background-color: #14234a;}
+#closeButton{ font-weight: bold; position: absolute; top: 7px; right: 6px; z-index: 10; width: 25px; height: 24px; line-height: 20px; color: white; border: 1px solid white; background-color: black; font-size: 12pt !important;  border-radius: 3px;}
+#closeButton:hover{background-color: #9a5a37;}
 #settingsWindow{ position: absolute; right: 33.5%; top: 40%;  font-size: 18pt;}
 .setting { float: right; right: 0; position: absolute; height: 22px; margin-right: 20px; width: 250px; margin-top: 2px; font-size: 13pt; !important}
 #controllerSettings { display: none; position: relative; color: black; font-size: 15pt; font-weight: bold; background-color: #14234a; color: white; width: 1205px; height: 360px; opacity: 0.8; padding: 10px; padding-top: 60px; border: 1px solid black;}
@@ -53,7 +51,8 @@ label { float: left; }
 #extendedControls { display: none; position: absolute; top: 430px; width: 1225px; left: -1px; height: 230px; background-color: #14234a; border: 1px solid black; border-top: 0;}
 #extendedControls label {float: left;}
 #extendedControls select {float: right;}
-#expandCollapse { position: absolute; bottom: -10px; left: 550px; border: 1px solid black; background-color: #14234a; color: white; width:50px; height; 30px;}
+#expandCollapse { position: absolute; bottom: -10px; left: 540px; border: 1px solid black; background-color: #14234a; color: white; padding-left: 22px; padding-right: 20px; height: 24px; font-size: 14pt; letter-spacing: 3px;}
+#expandCollapse:hover {background-color: #9a5a37;}
 #vehicle, #other {margin-left: 20px; width: 220px; border: 1px solid white; padding: 10px; float: left; min-height: 190px; margin-bottom: 20px;}
 #advanced {display: none; margin-left: 20px; width: 640px; border: 1px solid white; padding: 10px; float: left; min-height: 190px; margin-bottom: 20px; line-height: 23px; opacity: 0.6;}
 #advanced select, #advanced input {width: 250px; height: 17px; float: right; color: black;}

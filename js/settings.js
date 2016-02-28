@@ -244,13 +244,11 @@ var extendedShown = false;
 function showExtended(){
     if (!extendedShown){
         $("#extendedControls").css("display", "block");
-        $("#expandCollapse").css("bottom", "-240px");
-        $("#expandCollapse").html("Less");        
+        $("#expandCollapse").css("bottom", "-240px");     
         extendedShown = true;
     } else {
         $("#extendedControls").css("display", "none");
         $("#expandCollapse").css("bottom", "-10px");
-        $("#expandCollapse").html("More");  
         extendedShown = false;
     }
 }
