@@ -85,10 +85,13 @@ var controllerPresets = [
     ["Halo 4 Green Thumb","LS,A,B,X,LB,RT,LT,X,LB,RB,Y,RS,LT,Right,,,LT,A,B,RT,LT,RB,Start,Back,Y,,"],
     ["Halo 4 Bumper Jumper","A,LB,LS,B,X,RT,LT,B,X,RS,Y,RB,LT,Right,,,LT,LB,LS,RT,LT,RB,Start,Back,Y,,"],
     ["Halo 4 Recon","X,A,LS,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,Right,,,LT,A,LS,RT,LT,B,Start,Back,Y,,"],
-    ["Halo 4 Fishstick","LS,A,B,X,LB,RT,LT,X,LB,LS,Y,RS,RB,Right,,,LT,A,B,RT,LT,RS,Start,Back,Y,,"]
+    ["Halo 4 Fishstick","LS,A,B,X,LB,RT,LT,X,LB,LT,Y,RS,RB,Right,,,LT,A,B,RT,LT,RS,Start,Back,Y,,"]
 ];
 
 $(document).ready(function() {
+    if(window.location.href.indexOf("#") == -1) {
+       window.location.replace("#playerSettings");
+    }
     fixResolution();
     $('.color').colorPicker({
         opacity: false,    
