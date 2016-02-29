@@ -16,8 +16,8 @@
     </script>
 </head>
 <body>
-<div id="settingsWindow" class="tabbed-area adjacent">
-    <div class="box-wrap">
+<div id="settingsWindow">
+    <div>
         <div id="windowHeader">Eldewrito Settings<button id="closeButton" onclick="closeBrowser();">X</button></div>
         <div id="serverSettings">
             <label for="sName">Server Name</label><input class="setting" type="text" id="sName" name="sName"><br />
@@ -73,7 +73,7 @@
             <label for="colorsHolo">Holo</label><input class="setting color no-alpha" id="colorsHolo" value="#FFFFFF" name="colorsHolo"><br />
         </div>
         
-        <ul class="tabs group">
+        <ul class="tabs">
             <li><a href="#playerSettings">Player</a></li>
             <li><a href="#serverSettings">Server</a></li>
             <li><a href="#advancedSettings">Advanced</a></li>
@@ -83,24 +83,23 @@
 </div>
 
 <div id="controllerSettings">
-<div id="controllerHeader">Controller Settings<button id="closeButton" onclick="showController();">X</button></div>
-<div id="presets"><label for="presetMenu">Presets:</label><select id="presetMenu" onchange="applyBindString(this.value);">
-</select><br /></div>
+	<div id="windowHeader">Controller Settings<button id="closeButton" onclick="showController();">X</button></div>
+	<div id="presets"><label for="presetMenu">Presets:</label><select id="presetMenu" onchange="applyBindString(this.value);"></select><br /></div>
     <div id="controls">
-        <label for="Jump">Jump</label><select id="Jump"></select><br />
-        <label for="Melee">Melee</label><select id="Melee"></select><br />        
-        <label for="Reload">Reload</label><select id="Reload"></select><br />
-        <label for="Use">Use</label><select id="Use"></select><br />
-        <label for="SwitchWeapons">Switch Weapons</label><select id="SwitchWeapons"></select><br />
-        <label for="Crouch">Crouch</label><select id="Crouch"></select><br />
-        <label for="Zoom">Zoom</label><select id="Zoom"></select><br />
-        <label for="Fire">Fire</label><select id="Fire"></select><br />
-        <label for="Grenade">Grenade</label><select id="Grenade"></select><br />
-        <label for="SwitchGrenades">Switch Grenades</label><select id="SwitchGrenades"></select><br />
-        <label for="Sprint">Sprint</label><select id="Sprint"></select><br />
-        <label for="DualWield">Dual Wield</label><select id="DualWield"></select><br />
-        <label for="FireLeft">Fire Left</label><select id="FireLeft"></select><br />
-        <label for="ReloadLeft">Reload Left</label><select id="ReloadLeft"></select><br />
+        <label for="Jump">Jump</label><select class="bind" id="Jump"></select><br />
+        <label for="Melee">Melee</label><select class="bind" id="Melee"></select><br />        
+        <label for="Reload">Reload</label><select class="bind" id="Reload"></select><br />
+        <label for="Use">Use</label><select class="bind" id="Use"></select><br />
+        <label for="SwitchWeapons">SwitchWeapons</label><select class="bind" id="SwitchWeapons"></select><br />
+        <label for="Crouch">Crouch</label><select class="bind" id="Crouch"></select><br />
+        <label for="Zoom">Zoom</label><select class="bind" id="Zoom"></select><br />
+        <label for="Fire">Fire</label><select class="bind" id="Fire"></select><br />
+        <label for="Grenade">Grenade</label><select class="bind" id="Grenade"></select><br />
+        <label for="SwitchGrenades">SwitchGrenades</label><select class="bind" id="SwitchGrenades"></select><br />
+        <label for="Sprint">Sprint</label><select class="bind" id="Sprint"></select><br />
+        <label for="DualWield">DualWield</label><select class="bind" id="DualWield"></select><br />
+        <label for="FireLeft">FireLeft</label><select class="bind" id="FireLeft"></select><br />
+        <label for="ReloadLeft">ReloadLeft</label><select class="bind" id="ReloadLeft"></select><br />
     </div>
     <div id="controllerGraphic">
         <img id="controllerPic" src="images/controller.png">
@@ -123,38 +122,38 @@
     </div>
     <div id="extendedControls">
         <div id="vehicle">
-        <label for="VehicleAccelerate">VehicleAccelerate</label><select id="VehicleAccelerate"></select><br />        
-        <label for="VehicleBrake">VehicleBrake</label><select id="VehicleBrake"></select><br />
-        <label for="VehicleBoost">VehicleBoost</label><select id="VehicleBoost"></select><br />
-        <label for="VehicleRaise">VehicleRaise</label><select id="VehicleRaise"></select><br />
-        <label for="VehicleDive">VehicleDive</label><select id="VehicleDive"></select><br />
-        <label for="VehicleFire">VehicleFire</label><select id="VehicleFire"></select><br />
-        <label for="VehicleAltFire">VehicleAltFire</label><select id="VehicleAltFire"></select><br />
-        <label for="BansheeBomb">BansheeBomb</label><select id="BansheeBomb"></select><br />
+        <label for="VehicleAccelerate">VehicleAccelerate</label><select class="bind" id="VehicleAccelerate"></select><br />        
+        <label for="VehicleBrake">VehicleBrake</label><select class="bind" id="VehicleBrake"></select><br />
+        <label for="VehicleBoost">VehicleBoost</label><select class="bind" id="VehicleBoost"></select><br />
+        <label for="VehicleRaise">VehicleRaise</label><select class="bind" id="VehicleRaise"></select><br />
+        <label for="VehicleDive">VehicleDive</label><select class="bind" id="VehicleDive"></select><br />
+        <label for="VehicleFire">VehicleFire</label><select class="bind" id="VehicleFire"></select><br />
+        <label for="VehicleAltFire">VehicleAltFire</label><select class="bind" id="VehicleAltFire"></select><br />
+        <label for="BansheeBomb">BansheeBomb</label><select class="bind" id="BansheeBomb"></select><br />
         </div><div id="other">
-        <label for="ForgeDelete">ForgeDelete</label><select id="ForgeDelete"></select><br />
-        <label for="Chat">Chat</label><select id="Chat"></select><br />
-        <label for="TeamChat">TeamChat</label><select id="TeamChat"></select><br />
-        <label for="Menu">Menu</label><select id="Menu"></select><br />
-        <label for="Scoreboard">Scoreboard</label><select id="Scoreboard"></select><br />
+        <label for="ForgeDelete">ForgeDelete</label><select class="bind" id="ForgeDelete"></select><br />
+        <label for="Chat">Chat</label><select class="bind" id="Chat"></select><br />
+        <label for="TeamChat">TeamChat</label><select class="bind" id="TeamChat"></select><br />
+        <label for="Menu">Menu</label><select class="bind" id="Menu"></select><br />
+        <label for="Scoreboard">Scoreboard</label><select class="bind" id="Scoreboard"></select><br />
         </div>
         <div id="advanced">
         <label for="lookSensitivity">Look Sensitivity</label>
-        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="lookSensitivityText" name="lookSensitivity" onchange="updateSetting('lookSensitivity', this.value);" disabled>
-        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="lookSensitivity" name="lookSensitivity" oninput="document.querySelector('#lookSensitivityText').value = this.value;" disabled>
+        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="lookSensitivityText" class="setting" name="lookSensitivity" onchange="updateSetting('lookSensitivity', this.value);">
+        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="lookSensitivity" class="setting" name="lookSensitivity" oninput="document.querySelector('#lookSensitivityText').value = this.value;">
         <br />
         <label for="movementSensitivity">Movement Sensitivity</label>
-        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="movementSensitivityText" name="movementSensitivity" onchange="updateSetting('lookSensitivity', this.value);" disabled>
-        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="movementSensitivity" name="movementSensitivity" oninput="document.querySelector('#movementSensitivityText').value = this.value;" disabled>
+        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="movementSensitivityText" class="setting" name="movementSensitivity" onchange="updateSetting('lookSensitivity', this.value);">
+        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="movementSensitivity" class="setting" name="movementSensitivity" oninput="document.querySelector('#movementSensitivityText').value = this.value;">
         <br />
-        <label for="stickLayout">Stick Layout</label><select id="stickLayout" disabled>
+        <label for="stickLayout">Stick Layout</label><select class="setting" id="stickLayout">
         <option value="">Default</option>
         <option value="">Southpaw</option>
         <option value="">Legacy</option>
         <option value="">Legacy Southpaw</option>
         </select><br />
-        <label for="lookInversion">Look Inversion</label><input type="checkbox" id="lookInversion" disabled><br />
-        <label for="toggleCrouch">Toggle Crouch</label><input type="checkbox" id="toggleCrouch" disabled><br />
+        <label for="lookInversion">Look Inversion</label><input type="checkbox" class="setting" id="lookInversion"><br />
+        <label for="toggleCrouch">Toggle Crouch</label><input type="checkbox" class="setting" id="toggleCrouch"><br />
         </div>
     </div>
     <button id="expandCollapse" onClick="showExtended();">&#8226;&#8226;&#8226;</button>

@@ -244,7 +244,7 @@ var extendedShown = false;
 function showExtended(){
     if (!extendedShown){
         $("#extendedControls").css("display", "block");
-        $("#expandCollapse").css("bottom", "-240px");     
+        $("#expandCollapse").css("bottom", "-266px");     
         extendedShown = true;
     } else {
         $("#extendedControls").css("display", "none");
