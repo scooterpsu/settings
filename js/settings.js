@@ -110,6 +110,9 @@ $(document).ready(function() {
         updateBinding(this.id, this.value);
         updateBindLabels();
     });    
+    $('#advanced input, #advanced select').on('change input', function(){
+        console.log(this.id, this.value);
+    }); 
     setButtonLists();
 	setOptionList('presetMenu', controllerPresets);
 	setOptionList('renderWeapon', renderWeapons);
@@ -244,7 +247,7 @@ var extendedShown = false;
 function showExtended(){
     if (!extendedShown){
         $("#extendedControls").css("display", "block");
-        $("#expandCollapse").css("bottom", "-266px");     
+        $("#expandCollapse").css("bottom", "-271px");     
         extendedShown = true;
     } else {
         $("#extendedControls").css("display", "none");
