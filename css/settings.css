@@ -17,7 +17,7 @@ label{float:left;}
 #presetMenu{font-size:13pt;height:22px;margin-left:10px;margin-top:3px;width:380px;}
 #controls,#vehicle,#other,#advanced{border:1px solid #FFF;float:left;line-height:27px;margin-left:20px;min-height:220px;padding:10px;position:relative;width:220px;}
 #controls select,#extendedControls select{float:right;}
-#controllerGraphic{float:right;position:relative;right:250px;top:50px;}
+#controllerGraphic{float:right;position:relative;right:250px;top:60px;}
 #controllerGraphic div{height:32px;line-height:16px;position:absolute;width:250px;z-index:-1;}
 #controllerPic{position:relative;top:5px;}
 #extendedControls{background-color:#14234a;border:1px solid #000;border-top:0;display:none;height:260px;left:-1px;position:absolute;top:435px;width:1205px;}
