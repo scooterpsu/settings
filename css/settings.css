@@ -21,7 +21,7 @@ label{float:left;}
 #controllerGraphic div{height:32px;line-height:16px;position:absolute;width:250px;z-index:-1;}
 #controllerPic{position:relative;top:5px;}
 #extendedControls{background-color:#14234a;border:1px solid #000;border-top:0;display:none;height:260px;left:-1px;position:absolute;top:435px;width:1205px;}
-#expandCollapse{background-color:#14234a;border:1px solid #000;bottom:-10px;color:#FFF;font-size:14pt;height:24px;left:540px;letter-spacing:3px;padding-left:22px;padding-right:20px;position:absolute;}
+#expandCollapse{background-color:#14234a;border:1px solid #000;border-radius:10px;bottom:-10px;color:#FFF;font-size:14pt;height:24px;left:540px;letter-spacing:3px;padding-left:22px;padding-right:20px;position:absolute;}
 #advanced{display:none;width:620px;}
 .setting{float:right;font-size:13pt;height:22px;margin-right:20px;margin-top:2px;position:absolute;right:0;width:250px;}
 .bind{float:right;font-size:13pt;height:22px;margin-right:20px;margin-top:2px;position:absolute;right:0;width:70px;}
@@ -42,3 +42,4 @@ label{float:left;}
 #Up{right:444px;text-align:right;top:167px;}
 #Down{right:438px;text-align:right;top:237px;}
 #closeButton:hover,#expandCollapse:hover{background-color:#9a5a37;}
+#closeButton:focus,#expandCollapse:focus{outline:0;}

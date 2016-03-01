@@ -121,6 +121,21 @@ $(document).ready(function() {
 	setOptionList('shoulders', armorList);
 	setOptionList('arms', armorList);
 	setOptionList('legs', armorList);
+    $('.wheelable').on('mousewheel', function(e) {
+        if(e.originalEvent.wheelDelta > 0){
+            var nextElement = $('#'+this.id+' > option:selected').prev('option');
+            if (nextElement.length > 0) {
+                $('#'+this.id+'  > option:selected').removeAttr('selected').prev('option').attr('selected', 'selected');
+                updateSetting(this.name, this.value);
+            }
+        }else{
+            var nextElement = $('#'+this.id+'  > option:selected').next('option');
+            if (nextElement.length > 0) {
+                $('#'+this.id+'  > option:selected').removeAttr('selected').next('option').attr('selected', 'selected');
+                updateSetting(this.name, this.value);
+            }
+        }
+    });
 });
 
 function fixResolution() {

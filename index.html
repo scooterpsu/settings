@@ -5,6 +5,7 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/jqColorPicker.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
     <script src="js/dewRcon.js"></script>
     <script src="js/settings.js"></script>
     <link rel="stylesheet" href="css/settings.css">
@@ -60,11 +61,11 @@
             <label for="pName">Player Name</label><input class="setting" type="text" id="pName" name="pName"><br />
             <label for="renderWeapon">Podium Weapon</label><select id="renderWeapon" name="renderWeapon" class="setting"></select><br />
             <center>Armor</center>
-            <label for="helmet">Helmet</label><select id="helmet" name="armorHelmet" class="setting"></select><br />
-            <label for="chest">Chest</label><select id="chest" class="setting" name="armorChest"></select><br />
-            <label for="shoulders">Shoulders</label><select id="shoulders" class="setting" name="armorShoulders"></select><br />
-            <label for="arms">Arms</label><select id="arms" class="setting" name="armorArms"></select><br />
-            <label for="legs">Legs</label><select id="legs" class="setting" name="armorLegs"></select><br />
+            <label for="helmet">Helmet</label><select id="helmet" name="armorHelmet" class="setting wheelable"></select><br />
+            <label for="chest">Chest</label><select id="chest" class="setting wheelable" name="armorChest"></select><br />
+            <label for="shoulders">Shoulders</label><select id="shoulders" class="setting wheelable" name="armorShoulders"></select><br />
+            <label for="arms">Arms</label><select id="arms" class="setting wheelable" name="armorArms"></select><br />
+            <label for="legs">Legs</label><select id="legs" class="setting wheelable" name="armorLegs"></select><br />
             <center>Colors</center>
             <label for="colorsPrimary">Primary</label><input class="setting color no-alpha" id="colorsPrimary" value="#FFFFFF" name="colorsPrimary"><br />
             <label for="colorsSecondary">Secondary</label><input class="setting color no-alpha" id="colorsSecondary" value="#FFFFFF" name="colorsSecondary"><br />
