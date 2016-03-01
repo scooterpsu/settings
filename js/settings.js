@@ -155,7 +155,12 @@ function loadSettings(i) {
 	if (i != settingsToLoad.length) {
 		dewRcon.send(settingsToLoad[i][1], function(ret) {
             if(settingsToLoad[i][1].startsWith("Player.Colors")){
-                $("input[name='"+settingsToLoad[i][0]+"']").css("background-color",ret);                   
+                $("input[name='"+settingsToLoad[i][0]+"']").css("background-color",ret);   
+                if(getLuminance(ret)> 0.22){
+                    $("input[name='"+settingsToLoad[i][0]+"']").css("color","#222");
+                }else{
+                    $("input[name='"+settingsToLoad[i][0]+"']").css("color","#ddd");
+                }
             }             
             if ($("input[name='"+settingsToLoad[i][0]+"']").is(':checkbox')){
                 if (ret == "1"){
@@ -291,4 +296,15 @@ function setOptionList(ElementID, ArrayVar){
         opt.value = ArrayVar[i][1];
         sel.appendChild(opt);
     }
+}
+
+function getLuminance(hex) {
+    var converted = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    var div = 255,
+        RGB = [parseInt(converted[1], 16)/div, parseInt(converted[2], 16)/div, parseInt(converted[3], 16)/div],
+        luminance = {r: 0.2126, g: 0.7152, b: 0.0722};
+    for (var i = RGB.length; i--; ) {
+        RGB[i] = RGB[i] <= 0.03928 ? RGB[i] / 12.92 : Math.pow(((RGB[i] + 0.055) / 1.055), 2.4);
+    }
+    return ((luminance.r * RGB[0]) + (luminance.g * RGB[1]) + (luminance.b * RGB[2]));
 }
