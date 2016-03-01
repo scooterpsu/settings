@@ -24,7 +24,8 @@ label{float:left;}
 #expandCollapse{background-color:#14234a;border:2px solid #000;border-radius:10px;bottom:-10px;color:#FFF;font-size:13pt;height:26px;left:540px;letter-spacing:3px;padding-left:22px;padding-right:20px;position:absolute;}
 #advanced{display:none;width:620px;}
 .setting{float:right;font-size:13pt;height:22px;margin-right:20px;margin-top:2px;position:absolute;right:0;width:250px;}
-.bind{float:right;font-size:13pt;height:22px;margin-right:20px;margin-top:2px;position:absolute;right:0;width:70px;}
+input.setting{padding-left:5px;}
+.bind{float:right;font-size:10pt;font-weight:bold;height:22px;margin-right:20px;margin-top:2px;position:absolute;right:0;width:70px;}
 #A{left:443px;top:177px;}
 #B{left:435px;top:144px;}
 #X{left:420px;top:78px;}
