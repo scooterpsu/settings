@@ -111,7 +111,7 @@ $(document).ready(function() {
         updateBindLabels();
     });    
     $('#advanced input, #advanced select').on('change input', function(){
-        console.log(this.id, this.value);
+        updateSetting(this.id, this.value);
     }); 
     setButtonLists();
 	setOptionList('presetMenu', controllerPresets);

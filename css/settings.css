@@ -4,7 +4,7 @@ label{float:left;}
 .tabs{bottom:-35px;left:0;list-style:none;margin-bottom:0;padding:0;position:absolute;}
 .tabs li{display:inline;}
 .tabs li a{background:#14234a;border:1px solid #000;color:#FFF;display:block;float:left;margin-left:-1px;padding:4px 12px;position:relative;text-decoration:none;}
-.tabs li a:hover{background:#9a5a37;}
+.tabs li a:hover{background:#B1572A;}
 #settingsWindow{font-size:18pt;margin-bottom:0;margin-top:45px;min-height:430px;opacity:0.8;position:absolute;right:33.5%;top:40%;}
 #settingsWindow div:not( #windowHeader ){background:#14234a;border:1px solid #000;left:0;min-height:430px;padding:20px;position:absolute;top:-2px;width:550px;}
 #playerSettings:target,#serverSettings:target,#advancedSettings:target{z-index:2;}
@@ -22,7 +22,7 @@ label{float:left;}
 #controllerPic{position:relative;top:5px;}
 #extendedControls{background-color:#14234a;border:1px solid #000;border-top:0;display:none;height:260px;left:-1px;position:absolute;top:435px;width:1205px;}
 #expandCollapse{background-color:#14234a;border:2px solid #000;border-radius:10px;bottom:-10px;color:#FFF;font-size:13pt;height:26px;left:540px;letter-spacing:3px;padding-left:22px;padding-right:20px;position:absolute;}
-#advanced{display:none;width:620px;}
+#advanced{width:620px;}
 .setting{float:right;font-size:13pt;height:22px;margin-right:20px;margin-top:2px;position:absolute;right:0;width:250px;}
 input.setting{padding-left:5px;}
 .bind{float:right;font-size:10pt;font-weight:bold;height:22px;margin-right:20px;margin-top:2px;position:absolute;right:0;width:70px;}
@@ -42,5 +42,5 @@ input.setting{padding-left:5px;}
 #Right{left:180px;top:263px;}
 #Up{right:444px;text-align:right;top:167px;}
 #Down{right:438px;text-align:right;top:237px;}
-#closeButton:hover,#expandCollapse:hover{background-color:#9a5a37;}
+#closeButton:hover,#expandCollapse:hover{background-color:#B1572A;}
 #closeButton:focus,#expandCollapse:focus{outline:0;}
