@@ -136,6 +136,7 @@ $(document).ready(function() {
             }
         }
     });
+    loadSettings(0);
 });
 
 function fixResolution() {
@@ -144,32 +145,25 @@ function fixResolution() {
     $('#controllerSettings').css("zoom", zoomRatio); 
 }
 
-function connectionTrigger() {
-    loadSettings(0);
-}
-
-function disconnectTrigger() {
-}
-
 function loadSettings(i) {
 	if (i != settingsToLoad.length) {
-		dewRcon.send(settingsToLoad[i][1], function(ret) {
+		dew.command(settingsToLoad[i][1], function(response) {
             if(settingsToLoad[i][1].startsWith("Player.Colors")){
-                $("input[name='"+settingsToLoad[i][0]+"']").css("background-color",ret);   
-                if(getLuminance(ret)> 0.22){
+                $("input[name='"+settingsToLoad[i][0]+"']").css("background-color",response);   
+                if(getLuminance(response)> 0.22){
                     $("input[name='"+settingsToLoad[i][0]+"']").css("color","#222");
                 }else{
                     $("input[name='"+settingsToLoad[i][0]+"']").css("color","#ddd");
                 }
             }             
             if ($("input[name='"+settingsToLoad[i][0]+"']").is(':checkbox')){
-                if (ret == "1"){
+                if (response == "1"){
                     $("input[name='"+settingsToLoad[i][0]+"']").prop('checked', true);
                 }                
             }else{
-                $("input[name='"+settingsToLoad[i][0]+"']").val(ret);
+                $("input[name='"+settingsToLoad[i][0]+"']").val(response);
             }
-            $("select[name='"+settingsToLoad[i][0]+"']").val(ret);
+            $("select[name='"+settingsToLoad[i][0]+"']").val(response);
 			i++;
 			loadSettings(i);
 		});
@@ -189,19 +183,13 @@ function updateSetting(setting, value){
     if (value.length < 1){
         value = "\"\"";
     }
-    dewRcon.send(settingsToLoad[arrayInArray(setting, settingsToLoad)][1] + " " + value, function(res){
-        if (res != "Command/Variable not found") {
-            dewRcon.send("writeconfig");
-        }
+    dew.command(settingsToLoad[arrayInArray(setting, settingsToLoad)][1] + " " + value, function(res){
+        dew.command("writeconfig");
     });
 }
 
 function closeBrowser() {
-	if(dewRconConnected) {
-        dewRcon.send('Game.SetMenuEnabled 0');
-	} else{
-		window.close();
-	}
+    dew.hide();
 }
 
 function arrayInArray(needle, haystack) {
@@ -226,15 +214,13 @@ function applyBindString(bindString){
 }
 
 function updateBinding(action, bind){
-	if(dewRconConnected) {
-        if (bind == "Back") { bind = "Select"; }
-		if (bind) { bind = "\"" + bind + "\""; }
-        dewRcon.send("Input.ControllerAction \"" + action + "\" " + bind, function(res){
-            if (res != "Command/Variable not found") {
-                dewRcon.send("writeconfig");
-            }
-        });
-    }
+    if (bind == "Back") { bind = "Select"; }
+    if (bind) { bind = "\"" + bind + "\""; }
+    dew.command("Input.ControllerAction \"" + action + "\" " + bind, function(res){
+        if (res != "Command/Variable not found") {
+            dew.command("writeconfig");
+        }
+    });
 }
 
 function updateBindLabels(){
