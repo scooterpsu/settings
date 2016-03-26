@@ -1,4 +1,4 @@
-@font-face{font-family:"Conduit ITC";src:url(../fonts/Conduit-ITC.woff);}
+@font-face{font-family:"Conduit ITC";src:url(Conduit-ITC.woff);}
 html{color:#FFF;font-family:"Conduit ITC", sans-serif;}
 label{float:left;}
 .tabs{bottom:-35px;left:0;list-style:none;margin-bottom:0;padding:0;position:absolute;}
