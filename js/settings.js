@@ -139,12 +139,6 @@ $(document).ready(function() {
     loadSettings(0);
 });
 
-function fixResolution() {
-    zoomRatio = screen.width/1920;
-    $('#settingsWindow').css("zoom", zoomRatio);  
-    $('#controllerSettings').css("zoom", zoomRatio); 
-}
-
 function loadSettings(i) {
 	if (i != settingsToLoad.length) {
 		dew.command(settingsToLoad[i][1], {}).then(function(response) {
@@ -251,11 +245,11 @@ var extendedShown = false;
 function showExtended(){
     if (!extendedShown){
         $("#extendedControls").css("display", "block");
-        $("#expandCollapse").css("bottom", "-271px");     
+        $("#expandCollapse").css("bottom", "-14.1vw");     
         extendedShown = true;
     } else {
         $("#extendedControls").css("display", "none");
-        $("#expandCollapse").css("bottom", "-10px");
+        $("#expandCollapse").css("bottom", "-0.75vw");
         extendedShown = false;
     }
 }

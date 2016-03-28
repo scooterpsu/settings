@@ -85,7 +85,7 @@
 </div>
 
 <div id="controllerSettings">
-	<div id="windowHeader">Controller Settings<button id="closeButton" onclick="showController();">X</button></div>
+	<div id="controllerWindowHeader">Controller Settings<button id="closeButton" onclick="showController();">X</button></div>
 	<div id="presets"><label for="presetMenu">Presets:</label><select id="presetMenu" onchange="applyBindString(this.value);"></select><br /></div>
     <div id="controls">
         <label for="Jump">Jump</label><select class="bind" id="Jump"></select><br />
@@ -141,12 +141,12 @@
         </div>
         <div id="advanced">
         <label for="lookSensitivity">Look Sensitivity</label>
-        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="lookSensitivityText" class="setting" name="lookSensitivity" onchange="updateSetting('lookSensitivity', this.value);">
-        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="lookSensitivity" class="setting" name="lookSensitivity" oninput="document.querySelector('#lookSensitivityText').value = this.value;">
+        <input type="text" value=3 class="tinySetting" id="lookSensitivityText" class="setting" name="lookSensitivity" onchange="updateSetting('lookSensitivity', this.value);">
+        <input value=3 type="range" min="1" max="10" id="lookSensitivity" class="setting" name="lookSensitivity" oninput="document.querySelector('#lookSensitivityText').value = this.value;">
         <br />
         <label for="movementSensitivity">Movement Sensitivity</label>
-        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="movementSensitivityText" class="setting" name="movementSensitivity" onchange="updateSetting('lookSensitivity', this.value);">
-        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="movementSensitivity" class="setting" name="movementSensitivity" oninput="document.querySelector('#movementSensitivityText').value = this.value;">
+        <input type="text" value=3 class="tinySetting" class="setting" name="movementSensitivity" onchange="updateSetting('lookSensitivity', this.value);">
+        <input value=3 type="range" min="1" max="10" id="movementSensitivity" class="setting" name="movementSensitivity" oninput="document.querySelector('#movementSensitivityText').value = this.value;">
         <br />
         <label for="stickLayout">Stick Layout</label><select class="setting" id="stickLayout">
         <option value="1">Default</option>
