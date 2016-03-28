@@ -11,15 +11,16 @@ label {
     font-size: 1.4vw;
 }
 .tabs {
-    right: 0;
+    float: right;
+    left: 15.75vw;
     top: 0.4vw;
-
     list-style: none;
     padding: 0;
     margin: 0;
     position: absolute;
     font-size: 1vw;
     z-index: 3;
+    width: 21vw;
 }
 .tabs li {
     display: inline;
@@ -29,11 +30,11 @@ label {
     color: #FFF;
     display: block;
     float: left;
-    padding: 2px 8px;
+    padding: 0.15vw 0.6vw;
     position: relative;
     text-decoration: none;
-    border-top-left-radius:8px;
-    border-top-right-radius:8px;
+    border-top-left-radius:0.5vw;
+    border-top-right-radius:0.5vw;
     margin-right: 2px;
 }
 .tabs li a:hover {
@@ -42,7 +43,7 @@ label {
 #settingsWindow {
     width: 33.75%;
     margin-bottom: 0;
-    opacity: 0.8;
+    opacity: 0.85;
     position: absolute;
     font-size: 1.5vw;
     line-height: 1.75vw;  
@@ -57,12 +58,13 @@ label {
     border: 1px solid #000;
     left: 0;
     padding: 20px;
+    padding-top: 15px;
     position: absolute;
     top: 2.45vw;
     height: 25.5vw;
 }
 #windowHeader {
-    padding: 5px 27px 20px 15px;
+    padding: 0.5vw 27px 20px 15px;
     height: 2vw;
     background-color: #000;
     color: #FFF;
@@ -72,23 +74,51 @@ label {
 .setting {
     float: right;
     font-size: 1.1vw;
+    font-weight: 700;
     height: 1.4vw;
     margin-right: 20px;
     margin-bottom: 0.5vw;
-    margin-top: 0.5vw;
+    margin-top: 0.2vw;
     position: absolute;
     right: 0;
     width: 15vw;
     font-family: "Conduit ITC", sans-serif;
+    border: 1px solid grey;
+    color: #474747;
+}
+.tinySetting {
+    width: 3vw; 
+    float: right; 
+    margin-top: 0.2vw; 
+    height: 1.4vw;
+    font-size: 1.1vw;
+    font-weight: 700;
+    font-family: "Conduit ITC", sans-serif;
+    text-align: center;
+    border: 1px solid grey;
+    color: #474747;
 }
 input.setting {
     padding-left: 5px;
 }
 input[type=range] {
+    -webkit-appearance: none;
     float: right;
     width: 11.5vw;
     margin-right: 0.5vw;
-    margin-top: 0.5vw;
+    margin-top: 0.75vw;
+    height: 0.25vw;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid grey;
+  height: 1.25vw;
+  width: 1.25vw;
+  border-radius: 1vw;
+  background: #efefef;
+}
+input[type=range]:focus, input[type=checkbox]:focus {
+  outline: none;
 }
 #playerSettings:target,#serverSettings:target,#advancedSettings:target {
     z-index: 2;
@@ -107,17 +137,24 @@ input[type=range] {
 #closeButton {
     background-color: #000;
     border: 1px solid #FFF;
-    border-radius: 3px;
+    border-radius: 0.3vw;
     color: #FFF;
+    padding: 0;
     font-size: 1vw;
     font-weight: 700;
-    line-height: 20px;
+    line-height: 1.75vw;
     position: absolute;
-    right: 5px;
-    top: 7px;
+    right: 0.4vw;
+    top: 0.4vw;
     width: 1.75vw;
     height: 1.75vw;
     z-index: 10;
+}
+#closeButton:hover,#expandCollapse:hover {
+    background-color: #B1572A;
+}
+#closeButton:focus,#expandCollapse:focus {
+    outline: 0;
 }
 #controllerSettings {
     background-color: #14234a;
@@ -288,10 +325,4 @@ input[type=range] {
     right: 438px;
     text-align: right;
     top: 237px;
-}
-#closeButton:hover,#expandCollapse:hover {
-    background-color: #B1572A;
-}
-#closeButton:focus,#expandCollapse:focus {
-    outline: 0;
 }

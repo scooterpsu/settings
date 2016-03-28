@@ -26,7 +26,7 @@
             <label for="sMessage">Join Message (\n for new line)</label><input class="setting" type="text" id="sMessage" name="sMessage"><br />
             <label for="sCountdown">Round Start Countdown</label><input class="setting" type="text" id="sCountdown" name="sCountdown"><br />
             <label for="sMaxPlayers">Maximum Players</label>
-            <input type="text" style="width: 3vw; float: right; margin-top: 0.5vw;" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);">
+            <input type="text" class="tinySetting" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);">
             <input type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" oninput="document.querySelector('#sMaxPlayersText').value = this.value;">
             <br />
             <label for="sShouldAnnounce">Announce to Server Lists</label><input class="setting" type="checkbox" id="sShouldAnnounce" name="sShouldAnnounce"><br />
@@ -40,7 +40,7 @@
         <div id="advancedSettings">
             <label for="cCenteredCrosshair">Centered Crosshair</label><input class="setting" type="checkbox" id="cCenteredCrosshair" name="cCenteredCrosshair"><br />
             <label for="cFOV">Screen FOV</label>
-            <input type="text" style="width: 3vw; float: right; margin-top: 0.5vw;" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);">
+            <input type="text" class="tinySetting" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);">
             <input type="range" min="65" max="150" id="cFOV" name="cFOV" oninput="document.querySelector('#cFOVText').value = this.value;">
             <br />
             <label for="cHideHUD">Hide HUD</label><input class="setting" type="checkbox" id="cHideHUD" name="cHideHUD"><br />
