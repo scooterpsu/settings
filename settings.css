@@ -136,6 +136,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
     line-height: 1vw;
     position: relative;
     margin-bottom: 0.5vw;
+    font-size: 1.25vw;
 }
 #closeButton {
     background-color: #000;
@@ -164,7 +165,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
     border: 1px solid #000;
     color: #FFF;
     display: none;
-    font-size: 1.4vw;
+    font-size: 1vw;
     font-weight: 700;
     height: 24.7vw;
     opacity: 0.8;
@@ -173,17 +174,17 @@ input[type=range]:focus, input[type=checkbox]:focus {
     width: 62.7vw;
 }
 #controllerSettings label{
-    font-size: 0.75vw;
+    font-size: 1vw;
 }
 
 #presets {
     float: right;
-    font-size: 1.5vw;
+    font-size: 2vw;
     margin-right: 13.5vw;
 }
 #presetMenu {
-    font-size: 0.75vw;
-    height: 1.1vw;
+    font-size: 1.25vw;
+    height: 1.5vw;
     margin-left: 0.5vw;
     width: 19.8vw;
     font-family: "Conduit ITC", sans-serif;
@@ -247,26 +248,32 @@ input[type=range]:focus, input[type=checkbox]:focus {
 }
 #advanced {
     width: 30.5vw;
+    opacity: 0.3;
 }
 
-#advanced .setting{
+#advanced input[!type=range], #advanced select {
     float: right;
     margin-right: 1vw;
+    height: 0.9vw;
+    line-height: 1.2vw;
+    margin-bottom: 0.2vw;
 }
 
 #advanced .tinySetting{
     height: 1.1vw;
-    font-size: 1vw;
+    font-size: 0.75vw;
     line-height: 1vw;
+    margin-right: 0.9vw;
 }
 
 #advanced input[type=range] {
-    margin-right: 4.5vw;
+    margin-right: 5vw;
+    line-height: 1.1vw
 }
 
 .bind {
     float: right;
-    font-size: 1vw;
+    font-size: 0.75vw;
     font-weight: 700;
     height: 1.25vw;
     margin-right: 1vw;
@@ -274,7 +281,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
     margin-top: 0.2vw;
     position: absolute;
     right: 0;
-    width: 5vw;
+    width: 4vw;
 }
 #A {
     left: 23vw;
