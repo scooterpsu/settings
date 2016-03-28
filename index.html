@@ -18,7 +18,7 @@
 </head>
 <body>
 <div id="settingsWindow">
-    <div>
+
         <div id="windowHeader">Eldewrito Settings<button id="closeButton" onclick="closeBrowser();">X</button></div>
         <div id="serverSettings">
             <label for="sName">Server Name</label><input class="setting" type="text" id="sName" name="sName"><br />
@@ -26,8 +26,8 @@
             <label for="sMessage">Join Message (\n for new line)</label><input class="setting" type="text" id="sMessage" name="sMessage"><br />
             <label for="sCountdown">Round Start Countdown</label><input class="setting" type="text" id="sCountdown" name="sCountdown"><br />
             <label for="sMaxPlayers">Maximum Players</label>
-            <input type="text" style="width: 25px; float: right; margin-left: 3px;" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);">
-            <input style="float: right; width: 220px; right: 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" oninput="document.querySelector('#sMaxPlayersText').value = this.value;">
+            <input type="text" style="width: 3vw; float: right; margin-top: 0.5vw;" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);">
+            <input type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" oninput="document.querySelector('#sMaxPlayersText').value = this.value;">
             <br />
             <label for="sShouldAnnounce">Announce to Server Lists</label><input class="setting" type="checkbox" id="sShouldAnnounce" name="sShouldAnnounce"><br />
             <label for="sSprintEnabled">Sprint Enabled</label><input class="setting" type="checkbox" id="sSprintEnabled" name="sSprintEnabled"><br />
@@ -40,8 +40,8 @@
         <div id="advancedSettings">
             <label for="cCenteredCrosshair">Centered Crosshair</label><input class="setting" type="checkbox" id="cCenteredCrosshair" name="cCenteredCrosshair"><br />
             <label for="cFOV">Screen FOV</label>
-            <input type="text" style="width: 45px; float: right;  margin-left: 3px;" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);">
-            <input style="float: right; width: 200px; right: 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" oninput="document.querySelector('#cFOVText').value = this.value;">
+            <input type="text" style="width: 3vw; float: right; margin-top: 0.5vw;" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);">
+            <input type="range" min="65" max="150" id="cFOV" name="cFOV" oninput="document.querySelector('#cFOVText').value = this.value;">
             <br />
             <label for="cHideHUD">Hide HUD</label><input class="setting" type="checkbox" id="cHideHUD" name="cHideHUD"><br />
             <label for="cSpeed">Camera Speed</label><input class="setting" type="text" id="cSpeed" name="cSpeed"><br />
@@ -81,7 +81,7 @@
             <li><a href="#advancedSettings">Advanced</a></li>
             <li><a onclick="showController();">Controller</a></li>
         </ul>
-    </div>
+
 </div>
 
 <div id="controllerSettings">

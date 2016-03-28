@@ -88,15 +88,11 @@ var controllerPresets = [
     ["Halo 4 Fishstick","LS,A,B,X,LB,RT,LT,X,LB,LT,Y,RS,RB,Right,,,LT,A,B,RT,LT,RS,Start,Back,Y,,"]
 ];
 
-dew.on("show", function (event) {
-    fixResolution();
-});
-
 $(document).ready(function() {
     if(window.location.href.indexOf("#") == -1) {
        window.location.replace("#playerSettings");
     }
-    fixResolution();
+    //fixResolution();
     $('.color').colorPicker({
         opacity: false,    
         renderCallback: function($elm, toggled) {

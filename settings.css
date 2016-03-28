@@ -1,46 +1,297 @@
-@font-face{font-family:"Conduit ITC";src:url(Conduit-ITC.woff);}
-html{color:#FFF;font-family:"Conduit ITC", sans-serif;}
-label{float:left;}
-.tabs{bottom:-35px;left:0;list-style:none;margin-bottom:0;padding:0;position:absolute;}
-.tabs li{display:inline;}
-.tabs li a{background:#14234a;border:1px solid #000;color:#FFF;display:block;float:left;margin-left:-1px;padding:4px 12px;position:relative;text-decoration:none;}
-.tabs li a:hover{background:#B1572A;}
-#settingsWindow{font-size:18pt;margin-bottom:0;margin-top:45px;min-height:430px;opacity:0.8;position:absolute;right:33.5%;top:40%;}
-#settingsWindow div:not( #windowHeader ){background:#14234a;border:1px solid #000;left:0;min-height:430px;padding:20px;position:absolute;top:-2px;width:550px;}
-#playerSettings:target,#serverSettings:target,#advancedSettings:target{z-index:2;}
-#playerSettings:target ~ .tabs a[href='#playerSettings'],#serverSettings:target ~ .tabs a[href='#serverSettings'],#advancedSettings:target ~ .tabs a[href='#advancedSettings']{background-color:#14234a;border-top:1px solid #14234a;z-index:3;}
-#windowHeader{background-color:#000;color:#FFF;font-size:18pt;left:-1px;padding:5px 20px 7px;position:absolute;top:-39px;width:553px;}
-#controllerSettings #windowHeader{width:1167px;}
-#closeButton{background-color:#000;border:1px solid #FFF;border-radius:3px;color:#FFF;font-size:12pt!important;font-weight:700;height:24px;line-height:20px;position:absolute;right:6px;top:7px;width:25px;z-index:10;}
-#controllerSettings{background-color:#14234a;border:1px solid #000;color:#FFF;display:none;font-size:15pt;font-weight:700;height:420px;opacity:0.8;padding-top:15px;position:relative;top:40px;width:1205px;}
-#presets{float:right;font-size:16pt;margin-right:260px;margin-top:-2px;}
-#presetMenu{font-size:13pt;height:22px;margin-left:10px;margin-top:3px;width:380px;}
-#controls,#vehicle,#other,#advanced{border:1px solid #FFF;float:left;line-height:27px;margin-left:20px;min-height:220px;padding:10px;position:relative;width:220px;}
-#controls select,#extendedControls select{float:right;}
-#controllerGraphic{float:right;position:relative;right:250px;top:60px;}
-#controllerGraphic div{height:32px;line-height:16px;position:absolute;width:250px;z-index:-1;}
-#controllerPic{position:relative;top:5px;}
-#extendedControls{background-color:#14234a;border:1px solid #000;border-top:0;display:none;height:260px;left:-1px;position:absolute;top:435px;width:1205px;}
-#expandCollapse{background-color:#14234a;border:2px solid #000;border-radius:10px;bottom:-10px;color:#FFF;font-size:13pt;height:26px;left:540px;letter-spacing:3px;padding-left:22px;padding-right:20px;position:absolute;}
-#advanced{width:620px;}
-.setting{float:right;font-size:13pt;height:22px;margin-right:20px;margin-top:2px;position:absolute;right:0;width:250px;}
-input.setting{padding-left:5px;}
-.bind{float:right;font-size:10pt;font-weight:bold;height:22px;margin-right:20px;margin-top:2px;position:absolute;right:0;width:70px;}
-#A{left:443px;top:177px;}
-#B{left:435px;top:144px;}
-#X{left:420px;top:78px;}
-#Y{left:428px;top:111px;}
-#RS{left:441px;top:216px;}
-#RB{left:395px;top:22px;}
-#RT{left:324px;top:-30px;}
-#LT{right:321px;text-align:right;top:-30px;}
-#LB{right:390px;text-align:right;top:22px;}
-#Start{height:20px!important;right:411px;text-align:right;top:78px;}
-#Back{height:20px!important;right:434px;text-align:right;top:101px;}
-#LS{right:443px;text-align:right;top:127px;}
-#Left{right:444px;text-align:right;top:202px;}
-#Right{left:180px;top:263px;}
-#Up{right:444px;text-align:right;top:167px;}
-#Down{right:438px;text-align:right;top:237px;}
-#closeButton:hover,#expandCollapse:hover{background-color:#B1572A;}
-#closeButton:focus,#expandCollapse:focus{outline:0;}
+@font-face {
+    font-family: "Conduit ITC";
+    src: url(Conduit-ITC.woff);
+}
+html {
+    color: #FFF;
+    font-family: "Conduit ITC", sans-serif;
+}
+label {
+    float: left;
+    font-size: 1.4vw;
+}
+.tabs {
+    right: 0;
+    top: 0.4vw;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    font-size: 1vw;
+    z-index: 3;
+}
+.tabs li {
+    display: inline;
+}
+.tabs li a {
+    background: #14234a;
+    color: #FFF;
+    display: block;
+    float: left;
+    padding: 2px 8px;
+    position: relative;
+    text-decoration: none;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+    margin-right: 2px;
+}
+.tabs li a:hover {
+    background: #B1572A;
+}
+#settingsWindow {
+    width: 33.75%;
+    margin-bottom: 0;
+    opacity: 0.8;
+    position: absolute;
+    font-size: 1.5vw;
+    line-height: 1.75vw;  
+    right:8%;
+    top:44%
+}
+#settingsWindow div{
+    width: 100%;
+}
+#settingsWindow div:not( #windowHeader) {
+    background: #14234a;
+    border: 1px solid #000;
+    left: 0;
+    padding: 20px;
+    position: absolute;
+    top: 2.45vw;
+    height: 25.5vw;
+}
+#windowHeader {
+    padding: 5px 27px 20px 15px;
+    height: 2vw;
+    background-color: #000;
+    color: #FFF;
+    line-height: 1.75vw;
+    position: relative;
+}
+.setting {
+    float: right;
+    font-size: 1.1vw;
+    height: 1.4vw;
+    margin-right: 20px;
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
+    position: absolute;
+    right: 0;
+    width: 15vw;
+    font-family: "Conduit ITC", sans-serif;
+}
+input.setting {
+    padding-left: 5px;
+}
+input[type=range] {
+    float: right;
+    width: 11.5vw;
+    margin-right: 0.5vw;
+    margin-top: 0.5vw;
+}
+#playerSettings:target,#serverSettings:target,#advancedSettings:target {
+    z-index: 2;
+}
+#playerSettings:target ~ .tabs a[href='#playerSettings'],#serverSettings:target ~ .tabs a[href='#serverSettings'],#advancedSettings:target ~ .tabs a[href='#advancedSettings'] {
+    background-color: #14234a;
+    border-bottom: 1px solid #14234a;
+    padding-bottom: 10px;
+}
+
+#controllerSettings #windowHeader {
+    top: 0;
+    height: 1vw;
+    margin-bottom: 15px;
+}
+#closeButton {
+    background-color: #000;
+    border: 1px solid #FFF;
+    border-radius: 3px;
+    color: #FFF;
+    font-size: 1vw;
+    font-weight: 700;
+    line-height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    width: 1.75vw;
+    height: 1.75vw;
+    z-index: 10;
+}
+#controllerSettings {
+    background-color: #14234a;
+    border: 1px solid #000;
+    color: #FFF;
+    display: none;
+    font-size: 15pt;
+    font-weight: 700;
+    height: 475px;
+    opacity: 0.8;
+    position: relative;
+    top: 40px;
+    width: 1205px;
+}
+#presets {
+    float: right;
+    font-size: 16pt;
+    margin-right: 260px;
+    margin-top: -2px;
+}
+#presetMenu {
+    font-size: 13pt;
+    height: 22px;
+    margin-left: 10px;
+    margin-top: 3px;
+    width: 380px;
+}
+#controls,#vehicle,#other,#advanced {
+    border: 1px solid #FFF;
+    float: left;
+    line-height: 27px;
+    margin-left: 20px;
+    min-height: 220px;
+    padding: 10px;
+    position: relative;
+    width: 220px;
+}
+#controls select,#extendedControls select {
+    float: right;
+}
+#controllerGraphic {
+    float: right;
+    position: relative;
+    right: 250px;
+    top: 60px;
+}
+#controllerGraphic div {
+    height: 32px;
+    line-height: 16px;
+    position: absolute;
+    width: 250px;
+    z-index: -1;
+}
+#controllerPic {
+    position: relative;
+    top: 5px;
+}
+#extendedControls {
+    background-color: #14234a;
+    border: 1px solid #000;
+    border-top: 0;
+    display: none;
+    height: 260px;
+    left: -1px;
+    position: absolute;
+    top: 475px;
+    width: 1205px;
+}
+#expandCollapse {
+    background-color: #14234a;
+    border: 2px solid #000;
+    border-radius: 10px;
+    bottom: -10px;
+    color: #FFF;
+    font-size: 13pt;
+    height: 26px;
+    left: 540px;
+    letter-spacing: 3px;
+    padding-left: 22px;
+    padding-right: 20px;
+    position: absolute;
+}
+#advanced {
+    width: 610px;
+}
+
+.bind {
+    float: right;
+    font-size: 10pt;
+    font-weight: bold;
+    height: 22px;
+    margin-right: 20px;
+    margin-top: 2px;
+    position: absolute;
+    right: 0;
+    width: 70px;
+}
+#A {
+    left: 443px;
+    top: 177px;
+}
+#B {
+    left: 435px;
+    top: 144px;
+}
+#X {
+    left: 420px;
+    top: 78px;
+}
+#Y {
+    left: 428px;
+    top: 111px;
+}
+#RS {
+    left: 441px;
+    top: 216px;
+}
+#RB {
+    left: 395px;
+    top: 22px;
+}
+#RT {
+    left: 324px;
+    top: -30px;
+}
+#LT {
+    right: 321px;
+    text-align: right;
+    top: -30px;
+}
+#LB {
+    right: 390px;
+    text-align: right;
+    top: 22px;
+}
+#Start {
+    height: 20px!important;
+    right: 411px;
+    text-align: right;
+    top: 78px;
+}
+#Back {
+    height: 20px!important;
+    right: 434px;
+    text-align: right;
+    top: 101px;
+}
+#LS {
+    right: 443px;
+    text-align: right;
+    top: 127px;
+}
+#Left {
+    right: 444px;
+    text-align: right;
+    top: 202px;
+}
+#Right {
+    left: 180px;
+    top: 263px;
+}
+#Up {
+    right: 444px;
+    text-align: right;
+    top: 167px;
+}
+#Down {
+    right: 438px;
+    text-align: right;
+    top: 237px;
+}
+#closeButton:hover,#expandCollapse:hover {
+    background-color: #B1572A;
+}
+#closeButton:focus,#expandCollapse:focus {
+    outline: 0;
+}
