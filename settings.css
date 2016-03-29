@@ -135,7 +135,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
     color: #FFF;
     line-height: 1vw;
     position: relative;
-    margin-bottom: 0.5vw;
+    margin-bottom: 1vw;
     font-size: 1.5vw;
 }
 #closeButton {
@@ -239,7 +239,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
     background-color: #14234a;
     border: 2px solid #000;
     border-radius: 0.5vw;
-    bottom: -0.75vw;
+    bottom: -0.65vw;
     color: #FFF;
     font-size: 0.75vw;
     height: 1.4vw;

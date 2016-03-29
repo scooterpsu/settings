@@ -248,7 +248,7 @@ function showExtended(){
         extendedShown = true;
     } else {
         $("#extendedControls").css("display", "none");
-        $("#expandCollapse").css("bottom", "-0.75vw");
+        $("#expandCollapse").css("bottom", "-0.65vw");
         extendedShown = false;
     }
 }
