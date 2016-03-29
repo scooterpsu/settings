@@ -88,15 +88,11 @@ var controllerPresets = [
     ["Halo 4 Fishstick","LS,A,B,X,LB,RT,LT,X,LB,LT,Y,RS,RB,Right,,,LT,A,B,RT,LT,RS,Start,Back,Y,,"]
 ];
 
-dew.on("show", function (event) {
-    fixResolution();
-});
-
 $(document).ready(function() {
     if(window.location.href.indexOf("#") == -1) {
        window.location.replace("#playerSettings");
     }
-    fixResolution();
+    //fixResolution();
     $('.color').colorPicker({
         opacity: false,    
         renderCallback: function($elm, toggled) {
@@ -143,15 +139,9 @@ $(document).ready(function() {
     loadSettings(0);
 });
 
-function fixResolution() {
-    zoomRatio = screen.width/1920;
-    $('#settingsWindow').css("zoom", zoomRatio);  
-    $('#controllerSettings').css("zoom", zoomRatio); 
-}
-
 function loadSettings(i) {
 	if (i != settingsToLoad.length) {
-		dew.command(settingsToLoad[i][1], {}, function(response) {
+		dew.command(settingsToLoad[i][1], {}).then(function(response) {
             if(settingsToLoad[i][1].startsWith("Player.Colors")){
                 $("input[name='"+settingsToLoad[i][0]+"']").css("background-color",response);   
                 if(getLuminance(response)> 0.22){
@@ -187,7 +177,7 @@ function updateSetting(setting, value){
     if (value.length < 1){
         value = "\"\"";
     }
-    dew.command(settingsToLoad[arrayInArray(setting, settingsToLoad)][1] + " " + value, {}, function(){
+    dew.command(settingsToLoad[arrayInArray(setting, settingsToLoad)][1] + " " + value, {}).then(function(){
         dew.command("writeconfig");
     });
 }
@@ -220,7 +210,7 @@ function applyBindString(bindString){
 function updateBinding(action, bind){
     if (bind == "Back") { bind = "Select"; }
     if (bind) { bind = "\"" + bind + "\""; }
-    dew.command("Input.ControllerAction \"" + action + "\" " + bind, {}, function(){
+    dew.command("Input.ControllerAction \"" + action + "\" " + bind, {}).then(function(){
         dew.command("writeconfig");
     });
 }
@@ -255,11 +245,11 @@ var extendedShown = false;
 function showExtended(){
     if (!extendedShown){
         $("#extendedControls").css("display", "block");
-        $("#expandCollapse").css("bottom", "-271px");     
+        $("#expandCollapse").css("bottom", "-14.1vw");     
         extendedShown = true;
     } else {
         $("#extendedControls").css("display", "none");
-        $("#expandCollapse").css("bottom", "-10px");
+        $("#expandCollapse").css("bottom", "-0.75vw");
         extendedShown = false;
     }
 }

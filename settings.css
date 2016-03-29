@@ -1,0 +1,361 @@
+@font-face {
+    font-family: "Conduit ITC";
+    src: url(Conduit-ITC.woff);
+}
+html {
+    color: #FFF;
+    font-family: "Conduit ITC", sans-serif;
+}
+label {
+    float: left;
+    font-size: 1.4vw;
+}
+.tabs {
+    float: right;
+    left: 15.75vw;
+    top: 0.4vw;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    font-size: 1vw;
+    z-index: 3;
+    width: 21vw;
+}
+.tabs li {
+    display: inline;
+}
+.tabs li a {
+    background: #14234a;
+    color: #FFF;
+    display: block;
+    float: left;
+    padding: 0.15vw 0.6vw;
+    position: relative;
+    text-decoration: none;
+    border-top-left-radius:0.5vw;
+    border-top-right-radius:0.5vw;
+    margin-right: 2px;
+}
+.tabs li a:hover {
+    background: #B1572A;
+}
+#settingsWindow {
+    width: 33.75%;
+    margin-bottom: 0;
+    opacity: 0.85;
+    position: absolute;
+    font-size: 1.5vw;
+    line-height: 1.75vw;  
+    right:8%;
+    top:44%
+}
+#settingsWindow div{
+    width: 100%;
+}
+#settingsWindow div:not( #windowHeader) {
+    background: #14234a;
+    border: 1px solid #000;
+    left: 0;
+    padding: 20px;
+    padding-top: 15px;
+    position: absolute;
+    top: 2.45vw;
+    height: 25.5vw;
+}
+#windowHeader {
+    padding: 0.5vw 27px 20px 15px;
+    height: 2vw;
+    background-color: #000;
+    color: #FFF;
+    line-height: 1.75vw;
+    position: relative;
+}
+.setting {
+    float: right;
+    font-size: 1.1vw;
+    font-weight: 700;
+    height: 1.4vw;
+    margin-right: 20px;
+    margin-bottom: 0.5vw;
+    margin-top: 0.2vw;
+    position: absolute;
+    right: 0;
+    width: 15vw;
+    font-family: "Conduit ITC", sans-serif;
+    border: 1px solid grey;
+    color: #474747;
+}
+.tinySetting {
+    width: 3vw; 
+    float: right; 
+    margin-top: 0.2vw; 
+    height: 1.4vw;
+    font-size: 1.1vw;
+    font-weight: 700;
+    font-family: "Conduit ITC", sans-serif;
+    text-align: center;
+    border: 1px solid grey;
+    color: #474747;
+}
+input.setting {
+    padding-left: 5px;
+}
+input[type=range] {
+    -webkit-appearance: none;
+    float: right;
+    width: 11.5vw;
+    margin-right: 0.5vw;
+    margin-top: 0.75vw;
+    height: 0.25vw;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid grey;
+  height: 1.25vw;
+  width: 1.25vw;
+  border-radius: 1vw;
+  background: #efefef;
+}
+input[type=range]:focus, input[type=checkbox]:focus {
+  outline: none;
+}
+#playerSettings:target,#serverSettings:target,#advancedSettings:target {
+    z-index: 2;
+}
+#playerSettings:target ~ .tabs a[href='#playerSettings'],#serverSettings:target ~ .tabs a[href='#serverSettings'],#advancedSettings:target ~ .tabs a[href='#advancedSettings'] {
+    background-color: #14234a;
+    border-bottom: 1px solid #14234a;
+    padding-bottom: 10px;
+}
+
+#controllerWindowHeader {
+    padding: 0.75vw 1.4vw 1vw 0.7vw;
+    background-color: #000;
+    color: #FFF;
+    line-height: 1vw;
+    position: relative;
+    margin-bottom: 0.5vw;
+    font-size: 1.5vw;
+}
+#closeButton {
+    background-color: #000;
+    border: 1px solid #FFF;
+    border-radius: 0.3vw;
+    color: #FFF;
+    padding: 0;
+    font-size: 1vw;
+    font-weight: 700;
+    line-height: 1.75vw;
+    position: absolute;
+    right: 0.4vw;
+    top: 0.4vw;
+    width: 1.75vw;
+    height: 1.75vw;
+    z-index: 10;
+}
+#closeButton:hover,#expandCollapse:hover {
+    background-color: #B1572A;
+}
+#closeButton:focus,#expandCollapse:focus {
+    outline: 0;
+}
+#controllerSettings {
+    background-color: #14234a;
+    border: 1px solid #000;
+    color: #FFF;
+    display: none;
+    font-size: 1vw;
+    font-weight: 700;
+    height: 24.7vw;
+    opacity: 0.8;
+    position: relative;
+    top: 2vw;
+    width: 62.7vw;
+}
+#controllerSettings label{
+    font-size: 1vw;
+}
+
+#presets {
+    float: right;
+    margin-right: 13.5vw;
+}
+#presets label {
+    font-size: 1.25vw;
+}
+#presetMenu {
+    font-size: 1.25vw;
+    height: 1.5vw;
+    margin-left: 0.5vw;
+    width: 19.8vw;
+    font-family: "Conduit ITC", sans-serif;
+}
+#controls,#vehicle,#other,#advanced {
+    border: 1px solid #FFF;
+    float: left;
+    line-height: 1.4vw;
+    margin-left: 1vw;
+    min-height: 11vw;
+    padding: 0.75vw;
+    position: relative;
+    width: 11.5vw;
+}
+#controls select,#extendedControls select {
+    float: right;
+}
+#controllerGraphic {
+    float: right;
+    position: relative;
+    right: 13vw;
+    top: 3.1vw;
+}
+#controllerGraphic div {
+    height: 1.7vw;
+    line-height: 0.83vw;
+    position: absolute;
+    width: 13vw;
+    z-index: -1;
+}
+#controllerPic {
+    position: relative;
+    top: 0.2vw;
+    width: 22.9vw;
+    height: 13.3vw;
+}
+#extendedControls {
+    background-color: #14234a;
+    border: 1px solid #000;
+    border-top: 0;
+    display: none;
+    height: 13.5vw;
+    left: -1px;
+    position: absolute;
+    top: 24.7vw;
+    width: 62.7vw;
+}
+#expandCollapse {
+    background-color: #14234a;
+    border: 2px solid #000;
+    border-radius: 0.5vw;
+    bottom: -0.75vw;
+    color: #FFF;
+    font-size: 0.75vw;
+    height: 1.4vw;
+    left: 28.1vw;
+    letter-spacing: 0.15vw;
+    padding-left: 1.15vw;
+    padding-right: 1.15vw;
+    position: absolute;
+}
+#advanced {
+    width: 30.5vw;
+    opacity: 0.3;
+}
+
+#advanced input[!type=range], #advanced select {
+    float: right;
+    margin-right: 1vw;
+    height: 0.9vw;
+    line-height: 1.2vw;
+    margin-bottom: 0.2vw;
+}
+
+#advanced .tinySetting{
+    height: 1.1vw;
+    font-size: 0.75vw;
+    line-height: 1vw;
+    margin-right: 0.9vw;
+}
+
+#advanced input[type=range] {
+    margin-right: 5vw;
+    line-height: 1.1vw
+}
+
+.bind {
+    float: right;
+    font-size: 0.75vw;
+    font-weight: 700;
+    height: 1.25vw;
+    margin-right: 1vw;
+    margin-bottom: 0.5vw;
+    margin-top: 0.2vw;
+    position: absolute;
+    right: 0;
+    width: 4vw;
+}
+#A {
+    left: 23vw;
+    top: 9vw;
+}
+#B {
+    left: 22.7vw;
+    top: 7.4vw;
+}
+#X {
+    left: 21.9vw;
+    top: 4vw;
+}
+#Y {
+    left: 22.3vw;
+    top: 5.6vw;
+}
+#RS {
+    left: 23vw;
+    top: 11.2vw;
+}
+#RB {
+    left: 20.6vw;
+    top: 1.1vw;
+}
+#RT {
+    left: 16.9vw;
+    top: -1.6vw;
+}
+#LT {
+    right: 16.7vw;
+    text-align: right;
+    top: -1.6vw;
+}
+#LB {
+    right: 20.3vw;
+    text-align: right;
+    top: 1.1vw;
+}
+#Start {
+    height: 1vw!important;
+    right: 21.4vw;
+    text-align: right;
+    top: 4vw;
+}
+#Back {
+    height: 1vw!important;
+    right: 22.6vw;
+    text-align: right;
+    top: 5.2vw;
+}
+#LS {
+    right: 23.1vw;
+    text-align: right;
+    top: 6.6vw;
+}
+#Left {
+    right: 23.1vw;
+    text-align: right;
+    top: 10.4vw;
+}
+#Right {
+    left: 9.4vw;
+    top: 13.7vw;
+}
+#Up {
+    right: 23.1vw;
+    text-align: right;
+    top: 8.6vw;
+}
+#Down {
+    right: 22.8vw;
+    text-align: right;
+    top: 12.2vw;
+}

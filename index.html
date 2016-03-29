@@ -4,11 +4,11 @@
     <title>Settings</title>
     <script src="dew://lib/dew.js"></script>
     <script src="dew://lib/jquery-2.2.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
+    <script src="dew://lib/jquery-ui.js"></script>
     <script src="js/jqColorPicker.min.js"></script>
     <script src="js/jquery.mousewheel.min.js"></script>
     <script src="js/settings.js"></script>
-    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="settings.css">
     <script>
         $(function() {
             $( "#settingsWindow" ).draggable();
@@ -18,7 +18,7 @@
 </head>
 <body>
 <div id="settingsWindow">
-    <div>
+
         <div id="windowHeader">Eldewrito Settings<button id="closeButton" onclick="closeBrowser();">X</button></div>
         <div id="serverSettings">
             <label for="sName">Server Name</label><input class="setting" type="text" id="sName" name="sName"><br />
@@ -26,8 +26,8 @@
             <label for="sMessage">Join Message (\n for new line)</label><input class="setting" type="text" id="sMessage" name="sMessage"><br />
             <label for="sCountdown">Round Start Countdown</label><input class="setting" type="text" id="sCountdown" name="sCountdown"><br />
             <label for="sMaxPlayers">Maximum Players</label>
-            <input type="text" style="width: 25px; float: right; margin-left: 3px;" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);">
-            <input style="float: right; width: 220px; right: 30px;" type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" oninput="document.querySelector('#sMaxPlayersText').value = this.value;">
+            <input type="text" class="tinySetting" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);">
+            <input type="range" min="1" max="16" id="sMaxPlayers" name="sMaxPlayers" oninput="document.querySelector('#sMaxPlayersText').value = this.value;">
             <br />
             <label for="sShouldAnnounce">Announce to Server Lists</label><input class="setting" type="checkbox" id="sShouldAnnounce" name="sShouldAnnounce"><br />
             <label for="sSprintEnabled">Sprint Enabled</label><input class="setting" type="checkbox" id="sSprintEnabled" name="sSprintEnabled"><br />
@@ -40,8 +40,8 @@
         <div id="advancedSettings">
             <label for="cCenteredCrosshair">Centered Crosshair</label><input class="setting" type="checkbox" id="cCenteredCrosshair" name="cCenteredCrosshair"><br />
             <label for="cFOV">Screen FOV</label>
-            <input type="text" style="width: 45px; float: right;  margin-left: 3px;" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);">
-            <input style="float: right; width: 200px; right: 50px;" type="range" min="65" max="150" id="cFOV" name="cFOV" oninput="document.querySelector('#cFOVText').value = this.value;">
+            <input type="text" class="tinySetting" id="cFOVText" name="cFOV" onchange="updateSetting('cFOV', this.value);">
+            <input type="range" min="65" max="150" id="cFOV" name="cFOV" oninput="document.querySelector('#cFOVText').value = this.value;">
             <br />
             <label for="cHideHUD">Hide HUD</label><input class="setting" type="checkbox" id="cHideHUD" name="cHideHUD"><br />
             <label for="cSpeed">Camera Speed</label><input class="setting" type="text" id="cSpeed" name="cSpeed"><br />
@@ -81,11 +81,11 @@
             <li><a href="#advancedSettings">Advanced</a></li>
             <li><a onclick="showController();">Controller</a></li>
         </ul>
-    </div>
+
 </div>
 
 <div id="controllerSettings">
-	<div id="windowHeader">Controller Settings<button id="closeButton" onclick="showController();">X</button></div>
+	<div id="controllerWindowHeader">Controller Settings<button id="closeButton" onclick="showController();">X</button></div>
 	<div id="presets"><label for="presetMenu">Presets:</label><select id="presetMenu" onchange="applyBindString(this.value);"></select><br /></div>
     <div id="controls">
         <label for="Jump">Jump</label><select class="bind" id="Jump"></select><br />
@@ -104,7 +104,7 @@
         <label for="ReloadLeft">ReloadLeft</label><select class="bind" id="ReloadLeft"></select><br />
     </div>
     <div id="controllerGraphic">
-        <img id="controllerPic" src="images/controller.png">
+        <img id="controllerPic" src="controller.png">
         <div id="A"></div>
         <div id="B"></div>
         <div id="X"></div>
@@ -141,21 +141,21 @@
         </div>
         <div id="advanced">
         <label for="lookSensitivity">Look Sensitivity</label>
-        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="lookSensitivityText" class="setting" name="lookSensitivity" onchange="updateSetting('lookSensitivity', this.value);">
-        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="lookSensitivity" class="setting" name="lookSensitivity" oninput="document.querySelector('#lookSensitivityText').value = this.value;">
+        <input type="text" value=3 class="tinySetting" id="lookSensitivityText" class="setting" name="lookSensitivity" onchange="updateSetting('lookSensitivity', this.value);" disabled>
+        <input value=3 type="range" min="1" max="10" id="lookSensitivity" class="setting" name="lookSensitivity" oninput="document.querySelector('#lookSensitivityText').value = this.value;" disabled>
         <br />
         <label for="movementSensitivity">Movement Sensitivity</label>
-        <input type="text" value=3 style="width: 25px; float: right; margin-left: 3px;" id="movementSensitivityText" class="setting" name="movementSensitivity" onchange="updateSetting('lookSensitivity', this.value);">
-        <input style="float: right; width: 220px; right: 30px;" value=3 type="range" min="1" max="10" id="movementSensitivity" class="setting" name="movementSensitivity" oninput="document.querySelector('#movementSensitivityText').value = this.value;">
+        <input type="text" value=3 class="tinySetting" class="setting" name="movementSensitivity" onchange="updateSetting('lookSensitivity', this.value);" disabled>
+        <input value=3 type="range" min="1" max="10" id="movementSensitivity" class="setting" name="movementSensitivity" oninput="document.querySelector('#movementSensitivityText').value = this.value;" disabled>
         <br />
-        <label for="stickLayout">Stick Layout</label><select class="setting" id="stickLayout">
+        <label for="stickLayout">Stick Layout</label><select class="setting" id="stickLayout" disabled>
         <option value="1">Default</option>
         <option value="2">Southpaw</option>
         <option value="3">Legacy</option>
         <option value="4">Legacy Southpaw</option>
         </select><br />
-        <label for="lookInversion">Look Inversion</label><input type="checkbox" class="setting" id="lookInversion"><br />
-        <label for="toggleCrouch">Toggle Crouch</label><input type="checkbox" class="setting" id="toggleCrouch"><br />
+        <label for="lookInversion">Look Inversion</label><input type="checkbox" class="setting" id="lookInversion"  disabled><br />
+        <label for="toggleCrouch">Toggle Crouch</label><input type="checkbox" class="setting" id="toggleCrouch" disabled><br />
         </div>
     </div>
     <button id="expandCollapse" onClick="showExtended();">&#8226;&#8226;&#8226;</button>
