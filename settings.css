@@ -110,15 +110,14 @@ input[type=range] {
     height: 0.25vw;
 }
 input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: 1px solid grey;
-  height: 1.25vw;
-  width: 1.25vw;
-  border-radius: 1vw;
-  background: #efefef;
+    -webkit-appearance: none;
+    border: 1px solid grey;
+    height: 1.25vw;
+    width: 1.25vw;
+    border-radius: 1vw;
+    background: #efefef;
 }
 input[type=range]:focus, input[type=checkbox]:focus {
-  outline: none;
 }
 #playerSettings:target,#serverSettings:target,#advancedSettings:target {
     z-index: 2;
@@ -182,10 +181,11 @@ input[type=range]:focus, input[type=checkbox]:focus {
     margin-right: 13.5vw;
 }
 #presets label {
+    margin-top: -0.05vw;
     font-size: 1.25vw;
 }
 #presetMenu {
-    font-size: 1.25vw;
+    font-size: 1vw;
     height: 1.5vw;
     margin-left: 0.5vw;
     width: 19.8vw;
@@ -197,7 +197,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
     line-height: 1.4vw;
     margin-left: 1vw;
     min-height: 11vw;
-    padding: 0.75vw;
+    padding: 0.5vw 0.75vw;
     position: relative;
     width: 11.5vw;
 }

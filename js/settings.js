@@ -3,67 +3,67 @@ var settingsToLoad = [['pName', 'Player.Name'], ['renderWeapon', 'Player.RenderW
 var binds = ["Sprint", "Jump", "Crouch", "Use", "DualWield", "Fire", "FireLeft", "Reload", "ReloadLeft", "Zoom", "SwitchWeapons", "Melee", "Grenade", "SwitchGrenades", "VehicleAccelerate", "VehicleBrake", "VehicleBoost", "VehicleRaise", "VehicleDive", "VehicleFire", "VehicleAltFire", "BansheeBomb", "Menu", "Scoreboard", "ForgeDelete", "Chat", "TeamChat"];
 var buttons = ["","A","B","X","Y","RB","LB","LT","RT","Start","Back","LS","RS","Left","Right","Up","Down"];
 var renderWeapons = [
-	["Assault Rifle","assault_rifle"],
-	["Assault Rifle DMG","ar_variant_2"],
-	["Assault Rifle ROF","ar_variant_3"],
-	["Assault Rifle ACC","ar_variant_5"],
-	["Assault Rifle PWR","ar_variant_6"],
-	["Battle Rifle","battle_rifle"],
-	["Battle Rifle ROF","br_variant_1"],
-	["Battle Rifle ACC","br_variant_2"],
-	["Battle Rifle MAG","br_variant_3"],
-	["Battle Rifle DMG","br_variant_4"],
-	["Battle Rifle RNG","br_variant_5"],
-	["Battle Rifle PWR","br_variant_6"],
-	["Covenant Carbine","covenant_carbine"],
-	["Covenant Carbine MAG","covenant_carbine_variant_1"],
-	["Covenant Carbine DMG","covenant_carbine_variant_2"],
-	["Covenant Carbine ACC","covenant_carbine_variant_3"],
-	["Covenant Carbine ROF","covenant_carbine_variant_4"],
-	["Covenant Carbine RNG","covenant_carbine_variant_5"],
-	["Covenant Carbine PWR","covenant_carbine_variant_6"],
-	["DMR","dmr"],
-	["DMR MAG","dmr_variant_1"],
-	["DMR ACC","dmr_variant_2"],
-	["DMR ROF","dmr_variant_3"],
-	["DMR DMG","dmr_variant_4"],
-	["DMR RNG","dmr_variant_5"],
-	["DMR PWR","dmr_variant_6"],
-	["Plasma Rifle","plasma_rifle"],
-	["Plasma Rifle PWR","plasma_rifle_variant_6"],
-	["SMG","smg"],
-	["SMG ROF","smg_variant_1"],
-	["SMG ACC","smg_variant_2"],
-	["SMG DMG","smg_variant_4"],
-	["SMG PWR","smg_variant_6"]
+    ["Assault Rifle","assault_rifle"],
+    ["Assault Rifle DMG","ar_variant_2"],
+    ["Assault Rifle ROF","ar_variant_3"],
+    ["Assault Rifle ACC","ar_variant_5"],
+    ["Assault Rifle PWR","ar_variant_6"],
+    ["Battle Rifle","battle_rifle"],
+    ["Battle Rifle ROF","br_variant_1"],
+    ["Battle Rifle ACC","br_variant_2"],
+    ["Battle Rifle MAG","br_variant_3"],
+    ["Battle Rifle DMG","br_variant_4"],
+    ["Battle Rifle RNG","br_variant_5"],
+    ["Battle Rifle PWR","br_variant_6"],
+    ["Covenant Carbine","covenant_carbine"],
+    ["Covenant Carbine MAG","covenant_carbine_variant_1"],
+    ["Covenant Carbine DMG","covenant_carbine_variant_2"],
+    ["Covenant Carbine ACC","covenant_carbine_variant_3"],
+    ["Covenant Carbine ROF","covenant_carbine_variant_4"],
+    ["Covenant Carbine RNG","covenant_carbine_variant_5"],
+    ["Covenant Carbine PWR","covenant_carbine_variant_6"],
+    ["DMR","dmr"],
+    ["DMR MAG","dmr_variant_1"],
+    ["DMR ACC","dmr_variant_2"],
+    ["DMR ROF","dmr_variant_3"],
+    ["DMR DMG","dmr_variant_4"],
+    ["DMR RNG","dmr_variant_5"],
+    ["DMR PWR","dmr_variant_6"],
+    ["Plasma Rifle","plasma_rifle"],
+    ["Plasma Rifle PWR","plasma_rifle_variant_6"],
+    ["SMG","smg"],
+    ["SMG ROF","smg_variant_1"],
+    ["SMG ACC","smg_variant_2"],
+    ["SMG DMG","smg_variant_4"],
+    ["SMG PWR","smg_variant_6"]
 ];
 var armorList = [
-	["Air Assault","air_assault"],
-	["Ballista","ballista"],
-	["Chameleon","chameleon"],
-	["Cyclops","cyclops"],
-	["Demo","demo"],
-	["Dutch","dutch"],
-	["Gladiator","gladiator"],
-	["Gungnir","gungnir"],
-	["Halberd","halberd"],
-	["Hammerhead","hammerhead"],
-	["Hoplite","hoplite"],
-	["Juggernaut","juggernaut"],
-	["Mac","mac"],
-	["Mercenary","mercenary"],
-	["Nihard","nihard"],
-	["Omni","omni"],
-	["Oracle","oracle"],
-	["Orbital","orbital"],
-	["Renegade","renegade"],
-	["Scanner","scanner"],
-	["Shark","shark"],
-	["Silverback","silverback"],
-	["Spectrum","spectrum"],
-	["Stealth","stealth"],
-	["Strider","strider"],
-	["Widow Maker","widow_maker"]
+    ["Air Assault","air_assault"],
+    ["Ballista","ballista"],
+    ["Chameleon","chameleon"],
+    ["Cyclops","cyclops"],
+    ["Demo","demo"],
+    ["Dutch","dutch"],
+    ["Gladiator","gladiator"],
+    ["Gungnir","gungnir"],
+    ["Halberd","halberd"],
+    ["Hammerhead","hammerhead"],
+    ["Hoplite","hoplite"],
+    ["Juggernaut","juggernaut"],
+    ["Mac","mac"],
+    ["Mercenary","mercenary"],
+    ["Nihard","nihard"],
+    ["Omni","omni"],
+    ["Oracle","oracle"],
+    ["Orbital","orbital"],
+    ["Renegade","renegade"],
+    ["Scanner","scanner"],
+    ["Shark","shark"],
+    ["Silverback","silverback"],
+    ["Spectrum","spectrum"],
+    ["Stealth","stealth"],
+    ["Strider","strider"],
+    ["Widow Maker","widow_maker"]
 ];
 var controllerPresets = [
     ["Halo Online Default","LS,A,X,RB,LB,RT,LT,RB,LB,RS,Y,B,LT,Right,,,LT,A,X,RT,LT,B,Start,Back,Y,,"],
@@ -92,7 +92,6 @@ $(document).ready(function() {
     if(window.location.href.indexOf("#") == -1) {
        window.location.replace("#playerSettings");
     }
-    //fixResolution();
     $('.color').colorPicker({
         opacity: false,    
         renderCallback: function($elm, toggled) {
@@ -114,13 +113,13 @@ $(document).ready(function() {
         updateSetting(this.id, this.value);
     }); 
     setButtonLists();
-	setOptionList('presetMenu', controllerPresets);
-	setOptionList('renderWeapon', renderWeapons);
-	setOptionList('helmet', armorList);
-	setOptionList('chest', armorList);
-	setOptionList('shoulders', armorList);
-	setOptionList('arms', armorList);
-	setOptionList('legs', armorList);
+    setOptionList('presetMenu', controllerPresets);
+    setOptionList('renderWeapon', renderWeapons);
+    setOptionList('helmet', armorList);
+    setOptionList('chest', armorList);
+    setOptionList('shoulders', armorList);
+    setOptionList('arms', armorList);
+    setOptionList('legs', armorList);
     $('.wheelable').on('mousewheel', function(e) {
         if(e.originalEvent.wheelDelta > 0){
             var nextElement = $('#'+this.id+' > option:selected').prev('option');
@@ -140,8 +139,8 @@ $(document).ready(function() {
 });
 
 function loadSettings(i) {
-	if (i != settingsToLoad.length) {
-		dew.command(settingsToLoad[i][1], {}).then(function(response) {
+    if (i != settingsToLoad.length) {
+        dew.command(settingsToLoad[i][1], {}).then(function(response) {
             if(settingsToLoad[i][1].startsWith("Player.Colors")){
                 $("input[name='"+settingsToLoad[i][0]+"']").css("background-color",response);   
                 if(getLuminance(response)> 0.22){
@@ -158,12 +157,12 @@ function loadSettings(i) {
                 $("input[name='"+settingsToLoad[i][0]+"']").val(response);
             }
             $("select[name='"+settingsToLoad[i][0]+"']").val(response);
-			i++;
-			loadSettings(i);
-		});
-	} else {
-		loadedSettings = true;
-	}
+            i++;
+            loadSettings(i);
+        });
+    } else {
+        loadedSettings = true;
+    }
 }
 
 function updateSetting(setting, value){
