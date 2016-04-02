@@ -170,7 +170,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
     height: 24.7vw;
     opacity: 0.8;
     position: relative;
-    top: 0.5vw;
+    top: 2vw;
     width: 62.7vw;
 }
 #controllerSettings label{
@@ -250,6 +250,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
 }
 #advanced {
     width: 30.5vw;
+    opacity: 0.3;
 }
 
 #advanced input[!type=range], #advanced select {
@@ -264,7 +265,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
     height: 1.1vw;
     font-size: 0.75vw;
     line-height: 1vw;
-    margin-right: 0.65vw;
+    margin-right: 0.9vw;
 }
 
 #advanced input[type=range] {

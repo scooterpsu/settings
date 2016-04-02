@@ -23,7 +23,7 @@
         <div id="serverSettings">
             <label for="sName">Server Name</label><input class="setting" type="text" id="sName" name="sName"><br />
             <label for="sPass">Password</label><input class="setting" type="text" id="sPass" name="sPass"><br />
-            <label for="sMessage">Join Message (\n for new line)</label><textarea class="setting" style="height:3.1vw;" type="text" id="sMessage" name="sMessage"></textarea><br /><br />
+            <label for="sMessage">Join Message (\n for new line)</label><input class="setting" type="text" id="sMessage" name="sMessage"><br />
             <label for="sCountdown">Round Start Countdown</label><input class="setting" type="text" id="sCountdown" name="sCountdown"><br />
             <label for="sMaxPlayers">Maximum Players</label>
             <input type="text" class="tinySetting" id="sMaxPlayersText" name="sMaxPlayers" onchange="updateSetting('sMaxPlayers', this.value);">
@@ -141,8 +141,21 @@
         </div>
         <div id="advanced">
         <label for="lookSensitivity">Look Sensitivity</label>
-        <input type="text" value=12 class="tinySetting" id="lookSensitivityText" class="setting" name="lookSensitivity" onchange="updateSensitivity(this.value);">
-        <input value="6" type="range" min="1" max="25" id="lookSensitivity" class="setting" name="lookSensitivity" oninput="document.querySelector('#lookSensitivityText').value = this.value;updateSensitivity(this.value);">
+        <input type="text" value=3 class="tinySetting" id="lookSensitivityText" class="setting" name="lookSensitivity" onchange="updateSetting('lookSensitivity', this.value);" disabled>
+        <input value=3 type="range" min="1" max="10" id="lookSensitivity" class="setting" name="lookSensitivity" oninput="document.querySelector('#lookSensitivityText').value = this.value;" disabled>
+        <br />
+        <label for="movementSensitivity">Movement Sensitivity</label>
+        <input type="text" value=3 class="tinySetting" class="setting" name="movementSensitivity" onchange="updateSetting('lookSensitivity', this.value);" disabled>
+        <input value=3 type="range" min="1" max="10" id="movementSensitivity" class="setting" name="movementSensitivity" oninput="document.querySelector('#movementSensitivityText').value = this.value;" disabled>
+        <br />
+        <label for="stickLayout">Stick Layout</label><select class="setting" id="stickLayout" disabled>
+        <option value="1">Default</option>
+        <option value="2">Southpaw</option>
+        <option value="3">Legacy</option>
+        <option value="4">Legacy Southpaw</option>
+        </select><br />
+        <label for="lookInversion">Look Inversion</label><input type="checkbox" class="setting" id="lookInversion"  disabled><br />
+        <label for="toggleCrouch">Toggle Crouch</label><input type="checkbox" class="setting" id="toggleCrouch" disabled><br />
         </div>
     </div>
     <button id="expandCollapse" onClick="showExtended();">&#8226;&#8226;&#8226;</button>
