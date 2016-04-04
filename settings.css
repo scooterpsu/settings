@@ -75,7 +75,8 @@ label {
     float: right;
     font-size: 1.1vw;
     font-weight: 700;
-    height: 1.4vw;
+    height: 1.5vw;
+    line-height: 1.5vw;
     margin-right: 20px;
     margin-bottom: 0.5vw;
     margin-top: 0.2vw;
@@ -90,7 +91,8 @@ label {
     width: 3vw; 
     float: right; 
     margin-top: 0.2vw; 
-    height: 1.4vw;
+    height: 1.5vw;
+    line-height: 1.5vw;
     font-size: 1.1vw;
     font-weight: 700;
     font-family: "Conduit ITC", sans-serif;
@@ -144,6 +146,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
     border-radius: 0.3vw;
     color: #FFF;
     padding: 0;
+    padding-left: 0.01vw;
     font-size: 1vw;
     font-weight: 700;
     line-height: 1.75vw;
@@ -153,6 +156,9 @@ input[type=range]:focus, input[type=checkbox]:focus {
     width: 1.75vw;
     height: 1.75vw;
     z-index: 10;
+}
+#controllerWindowHeader #closeButton{
+    padding: 0;
 }
 #closeButton:hover,#expandCollapse:hover {
     background-color: #B1572A;
@@ -179,16 +185,17 @@ input[type=range]:focus, input[type=checkbox]:focus {
 
 #presets {
     float: right;
-    margin-right: 13.5vw;
+    margin-right: 14.5vw;
 }
 #presets label {
     font-size: 1.25vw;
 }
 #presetMenu {
     font-size: 1.25vw;
-    height: 1.5vw;
+    height: 1.75vw;
+    line-height: 1.25vw;
     margin-left: 0.5vw;
-    width: 19.8vw;
+    width: 18vw;
     font-family: "Conduit ITC", sans-serif;
 }
 #controls,#vehicle,#other,#advanced {
@@ -261,7 +268,7 @@ input[type=range]:focus, input[type=checkbox]:focus {
 }
 
 #advanced .tinySetting{
-    height: 1.1vw;
+    height: 1.25vw;
     font-size: 0.9vw;
     line-height: 1vw;
     margin-right: 0.65vw;
