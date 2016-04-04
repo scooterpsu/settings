@@ -47,7 +47,7 @@ label {
     position: absolute;
     font-size: 1.5vw;
     line-height: 1.75vw;  
-    right:8%;
+    left:62%;
     top:44%
 }
 #settingsWindow div{
@@ -74,7 +74,6 @@ label {
 .setting {
     float: right;
     font-size: 1.1vw;
-    font-weight: 700;
     height: 1.5vw;
     line-height: 1.5vw;
     margin-right: 20px;
@@ -132,13 +131,13 @@ input[type=range]:focus, input[type=checkbox]:focus {
 }
 
 #controllerWindowHeader {
-    padding: 0.75vw 1.4vw 1vw 0.7vw;
+    padding: 0.75vw 1.4vw 0.75vw 0.7vw;
     background-color: #000;
     color: #FFF;
     line-height: 1vw;
     position: relative;
     margin-bottom: 0.5vw;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
 }
 #closeButton {
     background-color: #000;
@@ -175,8 +174,9 @@ input[type=range]:focus, input[type=checkbox]:focus {
     font-weight: 700;
     height: 24.7vw;
     opacity: 0.8;
-    position: relative;
-    top: 0.5vw;
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
     width: 62.7vw;
 }
 #controllerSettings label{
@@ -191,9 +191,9 @@ input[type=range]:focus, input[type=checkbox]:focus {
     font-size: 1.25vw;
 }
 #presetMenu {
-    font-size: 1.25vw;
-    height: 1.75vw;
-    line-height: 1.25vw;
+    font-size: 1.1vw;
+    height: 1.5vw;
+    line-height: 0.9vw;
     margin-left: 0.5vw;
     width: 18vw;
     font-family: "Conduit ITC", sans-serif;
