@@ -135,7 +135,7 @@ $(document).ready(function() {
             }
         }
     });
-    loadSettings(0);
+    //loadSettings(0);
 });
 
 function loadSettings(i) {
