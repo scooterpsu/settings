@@ -135,7 +135,7 @@ $(document).ready(function() {
             }
         }
     });
-    loadSettings(0);
+    //loadSettings(0);
 });
 
 function loadSettings(i) {
@@ -181,9 +181,9 @@ function updateSetting(setting, value){
     if (value.length < 1){
         value = "\"\"";
     }
-    dew.command(settingsToLoad[arrayInArray(setting, settingsToLoad)][1] + " " + value, {}).then(function(){
-        dew.command("writeconfig");
-    });
+    //dew.command(settingsToLoad[arrayInArray(setting, settingsToLoad)][1] + " " + value, {}).then(function(){
+    //    dew.command("writeconfig");
+    //});
 }
 
 function closeBrowser() {
@@ -214,9 +214,9 @@ function applyBindString(bindString){
 function updateBinding(action, bind){
     if (bind == "Back") { bind = "Select"; }
     if (bind) { bind = "\"" + bind + "\""; }
-    dew.command("Input.ControllerAction \"" + action + "\" " + bind, {}).then(function(){
-        dew.command("writeconfig");
-    });
+    //dew.command("Input.ControllerAction \"" + action + "\" " + bind, {}).then(function(){
+    //    dew.command("writeconfig");
+    //});
 }
 
 function updateBindLabels(){
@@ -249,11 +249,11 @@ var extendedShown = false;
 function showExtended(){
     if (!extendedShown){
         $("#extendedControls").css("display", "block");
-        $("#expandCollapse").css("bottom", "-14.1vw");     
+        $("#expandCollapse").css("bottom", "-24.957vh");     
         extendedShown = true;
     } else {
         $("#extendedControls").css("display", "none");
-        $("#expandCollapse").css("bottom", "-0.75vw");
+        $("#expandCollapse").css("bottom", "-1.3275vh");
         extendedShown = false;
     }
 }
