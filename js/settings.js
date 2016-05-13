@@ -249,11 +249,11 @@ var extendedShown = false;
 function showExtended(){
     if (!extendedShown){
         $("#extendedControls").css("display", "block");
-        $("#expandCollapse").css("bottom", "-14.1vw");     
+        $("#expandCollapse").css("bottom", "-24.957vh");     
         extendedShown = true;
     } else {
         $("#extendedControls").css("display", "none");
-        $("#expandCollapse").css("bottom", "-0.75vw");
+        $("#expandCollapse").css("bottom", "-1.3275vh");
         extendedShown = false;
     }
 }
