@@ -135,7 +135,7 @@ $(document).ready(function() {
             }
         }
     });
-    //loadSettings(0);
+    loadSettings(0);
 });
 
 function loadSettings(i) {
@@ -181,9 +181,9 @@ function updateSetting(setting, value){
     if (value.length < 1){
         value = "\"\"";
     }
-    //dew.command(settingsToLoad[arrayInArray(setting, settingsToLoad)][1] + " " + value, {}).then(function(){
-    //    dew.command("writeconfig");
-    //});
+    dew.command(settingsToLoad[arrayInArray(setting, settingsToLoad)][1] + " " + value, {}).then(function(){
+        dew.command("writeconfig");
+    });
 }
 
 function closeBrowser() {
@@ -214,9 +214,9 @@ function applyBindString(bindString){
 function updateBinding(action, bind){
     if (bind == "Back") { bind = "Select"; }
     if (bind) { bind = "\"" + bind + "\""; }
-    //dew.command("Input.ControllerAction \"" + action + "\" " + bind, {}).then(function(){
-    //    dew.command("writeconfig");
-    //});
+    dew.command("Input.ControllerAction \"" + action + "\" " + bind, {}).then(function(){
+        dew.command("writeconfig");
+    });
 }
 
 function updateBindLabels(){
